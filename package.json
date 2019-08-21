@@ -1,0 +1,33 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adueppen/personal-website.git"
+  },
+  "author": "Alex Dueppen",
+  "license": "SEE LICENSE IN README.md",
+  "bugs": {
+    "url": "https://github.com/adueppen/personal-website/issues"
+  },
+  "homepage": "https://github.com/adueppen/personal-website#readme",
+  "alias": {
+    "assets": "./src/assets",
+    "includes": "./src/includes",
+    "data": "./src/data"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3"
+  },
+  "dependencies": {
+    "eleventy-plugin-pwa": "^1.0.8"
+  }
+}
