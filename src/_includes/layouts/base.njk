@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="favicon.ico">
@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body id="top" itemscope itemtype="http://schema.org/WebPage">
-  {{ content | safe }}
-  <script>
-      if ("serviceWorker" in navigator)
-          navigator.serviceWorker.register("/service-worker.js");
-  </script>
-  <script src="scripts/index.js"></script>
+{{ content | safe }}
+<script>
+    if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/service-worker.js");
+</script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
