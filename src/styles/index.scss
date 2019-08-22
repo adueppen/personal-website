@@ -1,0 +1,12 @@
+@import '_reset.scss';
+
+:root {
+  --bg: #fff;
+  --text: #000;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+}

@@ -3,7 +3,7 @@
   "short_name": "Alex Dueppen",
   "theme_color": "#eeeeee",
   "background_color": "#000000",
-  "display": "standalone",
+  "display": "minimal-ui",
   "start_url": "/",
   "icons": [
     {
