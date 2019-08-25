@@ -19,11 +19,14 @@ if ("serviceWorker" in navigator) {
 export function swapColor() {
   let docEl = document.documentElement;
   let style = docEl.style;
+  let themeColor = document.querySelector("meta[name='theme-color']");
   if (getComputedStyle(docEl).getPropertyValue("--bg") === "#fff") {
     style.setProperty("--bg", "#000");
     style.setProperty("--text", "#fff");
+    themeColor.setAttribute("content", "#000");
   } else {
     style.setProperty("--bg", "#fff");
     style.setProperty("--text", "#000");
+    themeColor.setAttribute("content", "#fff");
   }
 }
