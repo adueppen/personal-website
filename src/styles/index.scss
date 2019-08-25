@@ -10,3 +10,37 @@ body {
   color: var(--text);
   font-family: sans-serif;
 }
+
+header {
+  display: inline-flex;
+  border-bottom: 1px solid var(--text);
+  width: 100%;
+}
+
+footer {
+  display: inline-flex;
+  border-top: 1px solid var(--text);
+  width: 100%;
+}
+
+footer > * {
+  margin-top: 16px;
+}
+
+.nav {
+  margin-left: auto;
+  justify-content: end;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.nav-item-active {
+  font-weight: bold;
+}
+
+a:visited, a {
+  color: var(--text);
+}

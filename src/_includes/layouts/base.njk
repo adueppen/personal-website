@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
+  <link rel="stylesheet" type="text/css" href="../../styles/index.scss"/>
   <meta charset="utf-8">
   <script>
     document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
@@ -17,9 +18,16 @@
 <body id="top" itemscope itemtype="http://schema.org/WebPage">
   <header>
     <p>Alex Dueppen</p>
-    <hr>
+    <ul class="nav">
+      {%- for nav in collections.toplevel -%}
+      <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+      {%- endfor -%}
+    </ul>
   </header>
   {{ content | safe }}
+  <footer>
+    <input type="button" onclick="utils.swapColor()" value="swap theme">
+  </footer>
   <script src="scripts/index.js"></script>
 </body>
 </html>
