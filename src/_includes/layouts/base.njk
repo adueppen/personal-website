@@ -19,7 +19,7 @@
   <header>
     <p>Alex Dueppen</p>
     <ul class="nav">
-      {%- for nav in collections.toplevel -%}
+      {%- for nav in collections.toplevel | reverse -%}
       <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
       {%- endfor -%}
     </ul>
