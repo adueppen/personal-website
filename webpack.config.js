@@ -1,25 +1,32 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/scripts/index.js',
+  entry: './src/scripts/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist/scripts'),
     filename: 'index.js',
     library: 'utils',
     libraryTarget: "window"
   },
+
+  devtool: "source-map",
+
+  resolve: {
+    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+  },
+
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        loader: "awesome-typescript-loader"
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   }
-}
+};

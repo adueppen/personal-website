@@ -1,11 +1,11 @@
 {
  "port": 4000,
  "serve": "dist",
- "bind": "192.168.1.2",
+ "bind": "0.0.0.0",
  "delay": 100,
  "quiet": true,
  "watchexps": [
-    "src/scripts/**/*.js # npm run scripts:dev",
+    "src/scripts/**/*.ts # npm run scripts:dev",
     "src/styles/**/*.scss # npm run styles:dev # reloadcss",
     "dist/**/*.html",
     "src/images/"
