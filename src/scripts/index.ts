@@ -11,7 +11,7 @@ if ("serviceWorker" in navigator) {
     }
   });
 
-  wb.register().catch(err => console.log(err, " something broke with the SW"));
+  wb.register().catch(err => console.log(`Something broke with the service worker: ${err}.`));
 }
 
 //todo: make dark mode stuff actually work nicely
