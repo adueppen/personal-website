@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
 }
 
 export function setTheme(theme: string) {
-  let bg: string, fg: string, _theme: string = (theme === "null" ? "light" : theme);
+  let bg: string, fg: string, _theme: string = (theme == null ? "light" : theme);
   const style = document.documentElement.style;
 
   if (_theme === "light") {
