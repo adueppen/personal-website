@@ -14,19 +14,27 @@ if ("serviceWorker" in navigator) {
   wb.register().catch(err => console.log(`Something broke with the service worker: ${err}.`));
 }
 
-//todo: make dark mode stuff actually work nicely
+export function setTheme(theme: string) {
+  let bg: string, fg: string, _theme: string = (theme === "null" ? "light" : theme);
+  const style = document.documentElement.style;
 
-export function swapColor() {
-  let docEl = document.documentElement;
-  let style = docEl.style;
-  let themeColor = document.querySelector("meta[name='theme-color']");
-  if (getComputedStyle(docEl).getPropertyValue("--bg") === "#fff") {
-    style.setProperty("--bg", "#000");
-    style.setProperty("--text", "#fff");
-    themeColor.setAttribute("content", "#000");
+  if (_theme === "light") {
+    bg = "#fff";
+    fg = "#000";
+  } else if (_theme === "dark") {
+    bg = "#282828";
+    fg = "#fff";
   } else {
-    style.setProperty("--bg", "#fff");
-    style.setProperty("--text", "#000");
-    themeColor.setAttribute("content", "#fff");
+    bg = "#000";
+    fg = "#fff";
   }
+
+  document.querySelector("meta[name='theme-color']").setAttribute("content", bg);
+  style.setProperty("--bg", bg);
+  style.setProperty("--fg", fg);
+
+  if (localStorage) localStorage.setItem("theme", _theme);
+  (document.querySelector(`input[value='${_theme}']`) as HTMLInputElement).checked = true;
 }
+
+setTheme(localStorage && localStorage.getItem("theme"));

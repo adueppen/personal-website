@@ -6,7 +6,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/scripts'),
     filename: 'index.js',
     library: 'utils',
-    libraryTarget: "window"
   },
 
   devtool: "source-map",

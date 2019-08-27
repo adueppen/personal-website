@@ -25,7 +25,20 @@
   </header>
   {{ content | safe }}
   <footer>
-    <input type="button" onclick="utils.swapColor()" value="swap theme">
+    <div id="themeSelect">
+      <label>
+        <input type="radio" name="theme" value="light" onclick="utils.setTheme('light')">
+        Light
+      </label>
+      <label>
+        <input type="radio" name="theme" value="dark" onclick="utils.setTheme('dark')">
+        Dark
+      </label>
+      <label>
+        <input type="radio" name="theme" value="black" onclick="utils.setTheme('black')">
+        Black
+      </label>
+    </div>
   </footer>
   <script src="/scripts/index.js"></script>
   <script src="//instant.page/2.0.0" type="module" integrity="sha384-D7B5eODAUd397+f4zNFAVlnDNDtO1ppV8rPnfygILQXhqu3cUndgHvlcJR2Bhig8"></script>
