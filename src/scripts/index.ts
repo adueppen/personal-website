@@ -5,9 +5,7 @@ if ("serviceWorker" in navigator) {
 
   wb.addEventListener("installed", event => {
     if (event.isUpdate) {
-      if (confirm("New content is available! Click OK to refresh. I promise that this annoying popup is temporary.")) {
-        window.location.reload();
-      }
+      document.getElementById("newContent").style.setProperty("display", "block");
     }
   });
 

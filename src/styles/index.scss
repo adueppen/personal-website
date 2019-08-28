@@ -44,3 +44,16 @@ footer > * {
 a:visited, a {
   color: var(--fg);
 }
+
+#newContent {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: var(--fg);
+  color: var(--bg);
+  text-align: center;
+}
