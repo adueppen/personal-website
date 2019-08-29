@@ -34,7 +34,7 @@
     "data": "./src/data"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^0.9.0",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@types/workbox-window": "^4.3.2",
