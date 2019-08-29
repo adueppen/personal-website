@@ -3,10 +3,7 @@ const pluginPWA = require("eleventy-plugin-pwa");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginPWA);
   eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy("src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("src/manifest.json");
-  /*todo: next release of 11ty will support copy passthrough globbing so I could put favicon.ico and manifest.json
-     in a different folder and make things less weird*/
+  eleventyConfig.addPassthroughCopy({"src/misc" : "/"});
   return {
     dir: {input: "src", output: "dist", data: "_data"},
     passthroughFileCopy: true,
