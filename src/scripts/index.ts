@@ -36,3 +36,8 @@ export function setTheme(theme: string) {
 }
 
 setTheme(localStorage && localStorage.getItem("theme"));
+
+/*export function drawBG() {
+  const canvas: HTMLCanvasElement = document.getElementById("bgCanvas") as HTMLCanvasElement;
+  const context = canvas.getContext("2d");
+}*/
