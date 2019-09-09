@@ -65,3 +65,6 @@ dist
 
 #webstorm
 .idea/
+
+#stuff that I'm not ready to make public yet
+testing/
