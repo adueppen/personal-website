@@ -12,6 +12,8 @@
   <meta name="author" content="Alex Dueppen">
   <meta name="theme-color" content="{{ siteData.themeColor }}">
   <title>{{ renderData.title or title or metadata.title }}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body id="top" itemscope itemtype="http://schema.org/WebPage">
@@ -23,7 +25,7 @@
       {%- endfor -%}
     </ul>
   </header>
-  {{ content | safe }}
+  <main>{{ content | safe }}</main>
   <footer>
     <div class="themeSelect">
       <label>

@@ -8,19 +8,40 @@
 body {
   background-color: var(--bg);
   color: var(--fg);
-  font-family: sans-serif;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h2 {
+  font-family: "Nunito", sans-serif;
 }
 
 header {
   display: inline-flex;
   border-bottom: 1px solid var(--fg);
   width: 100%;
+  padding: 0 1em 0 1em;
 }
 
 footer {
   display: inline-flex;
   border-top: 1px solid var(--fg);
   width: 100%;
+  padding: 0 1em 1em 1em;
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    display: block;
+  }
+
+  .themeSelect > * {
+    display: block;
+  }
+}
+
+main {
+  padding: 0 1em 0 1em;
 }
 
 footer > * {
@@ -28,13 +49,17 @@ footer > * {
 }
 
 .nav {
+  padding: 0;
   margin-left: auto;
   justify-content: end;
 }
 
 .nav-item {
   display: inline-block;
-  margin-right: 1em;
+}
+
+.nav-item + .nav-item {
+  margin-left: 1em;
 }
 
 .nav-item-active {
@@ -44,7 +69,6 @@ footer > * {
 .source {
   margin-left: auto;
   justify-content: end;
-  margin-right: 1em;
 }
 
 a:visited, a {
@@ -57,7 +81,7 @@ a:visited, a {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 50px;
+  height: 10vh;
   width: 100%;
   background: var(--fg);
   color: var(--bg);
