@@ -81,9 +81,16 @@ a:visited, a {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 10vh;
   width: 100%;
   background: var(--fg);
   color: var(--bg);
   text-align: center;
+}
+
+#newContent > p {
+  padding: 0 1em 0 1em;
+}
+
+ul {
+  padding-left: 20px;
 }
