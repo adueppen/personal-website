@@ -13,23 +13,32 @@ if ("serviceWorker" in navigator) {
 }
 
 export function setTheme(theme: string) {
-  let bg: string, fg: string, _theme: string = (theme == null ? "light" : theme);
+  let bg: string, fg: string, fgo: string, dv: string;
+  let _theme: string = (theme == null ? "light" : theme);
   const style = document.documentElement.style;
 
   if (_theme === "light") {
-    bg = "#fff";
+    bg = "#fafafa";
     fg = "#000";
+    fgo = "#0002";
+    dv = "#7d98a1";
   } else if (_theme === "dark") {
     bg = "#282828";
-    fg = "#fff";
+    fg = "#fafafa";
+    fgo = "#fff2";
+    dv = "#d7dee2";
   } else {
     bg = "#000";
-    fg = "#fff";
+    fg = "#fafafa";
+    fgo = "#fff3";
+    dv = "#d7dee2";
   }
 
   document.querySelector("meta[name='theme-color']").setAttribute("content", bg);
   style.setProperty("--bg", bg);
   style.setProperty("--fg", fg);
+  style.setProperty("--fgo", fgo);
+  style.setProperty("--dv", dv);
 
   if (localStorage) localStorage.setItem("theme", _theme);
   (document.querySelector(`input[value='${_theme}']`) as HTMLInputElement).checked = true;
