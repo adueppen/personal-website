@@ -1,4 +1,4 @@
-import { Workbox } from "workbox-window";
+import {Workbox} from "workbox-window";
 
 if ("serviceWorker" in navigator) {
   const wb = new Workbox("service-worker.js");
@@ -12,7 +12,7 @@ if ("serviceWorker" in navigator) {
   wb.register().catch(err => console.log(`Something broke with the service worker: ${err}.`));
 }
 
-export function setTheme(theme: string) {
+export function setTheme(theme: string): void {
   let bg: string, fg: string, fgo: string, dv: string;
   let _theme: string = (theme == null ? "light" : theme);
   const style = document.documentElement.style;
@@ -45,6 +45,10 @@ export function setTheme(theme: string) {
 }
 
 setTheme(localStorage && localStorage.getItem("theme"));
+
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.remove("preload");
+});
 
 /*export function drawBG() {
   const canvas: HTMLCanvasElement = document.getElementById("bgCanvas") as HTMLCanvasElement;

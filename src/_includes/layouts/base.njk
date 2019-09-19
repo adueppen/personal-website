@@ -1,28 +1,25 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <meta name="description" content="{{ renderData.description or description or metadata.description }}">
   <meta name="author" content="Alex Dueppen">
   <meta name="theme-color" content="{{ siteData.themeColor }}">
-  <title>{{ renderData.title or title or metadata.title }}</title>
+  <title>Alex Dueppen: {{ renderData.title or title or metadata.title }}</title>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/index.css">
 </head>
-<body id="top" itemscope itemtype="http://schema.org/WebPage">
+<body class="preload" itemscope itemtype="http://schema.org/WebPage">
   <header>
     <p>Alex Dueppen</p>
     <nav>
       <ul>
         {%- for nav in collections.toplevel -%}
-        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.title }}</a></li>
         {%- endfor -%}
       </ul>
     </nav>
