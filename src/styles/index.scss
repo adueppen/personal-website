@@ -13,6 +13,9 @@ $dividerHeight: 4px;
   --blue: #3a99f0;
   --green: #0cc355;
   --gray: #d7dee2;
+
+  scrollbar-color: var(--fgo) var(--bg); //this is only a thing in firefox at the moment but it looks nice
+  transition: scrollbar-color .25s;
 }
 
 body {
