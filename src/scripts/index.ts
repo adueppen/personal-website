@@ -1,28 +1,35 @@
 import {Workbox} from "workbox-window";
 
+//Hide stuff that requires JS
+document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requiresJS"));
+
+//Enable transitions after page is loaded to prevent flash of light theme if another theme is in use
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.remove("preload");
+});
+
+//Use service worker, and display update message if needed
 if ("serviceWorker" in navigator) {
   const wb = new Workbox("service-worker.js");
-
   wb.addEventListener("installed", event => {
     if (event.isUpdate) {
       document.getElementById("newContent").style.setProperty("display", "block");
     }
   });
-
   wb.register().catch(err => console.log(`Something broke with the service worker: ${err}.`));
 }
 
+//used for setting theme on both page load and theme selection
 export function setTheme(theme: string): void {
   let bg: string, fg: string, fgo: string, dv: string;
-  let _theme: string = (theme == null ? "light" : theme);
   const style = document.documentElement.style;
 
-  if (_theme === "light") {
+  if (theme === "light") {
     bg = "#fafafa";
     fg = "#000";
     fgo = "#0002";
     dv = "#7d98a1";
-  } else if (_theme === "dark") {
+  } else if (theme === "dark") {
     bg = "#282828";
     fg = "#fafafa";
     fgo = "#fff2";
@@ -40,16 +47,11 @@ export function setTheme(theme: string): void {
   style.setProperty("--fgo", fgo);
   style.setProperty("--dv", dv);
 
-  if (localStorage) localStorage.setItem("theme", _theme);
-  (document.querySelector(`input[value='${_theme}']`) as HTMLInputElement).checked = true;
+  if (localStorage) localStorage.setItem("theme", theme);
+  (document.querySelector(`input[value='${theme}']`) as HTMLInputElement).checked = true;
 }
 
-setTheme(localStorage && localStorage.getItem("theme"));
-
-window.addEventListener("load", () => {
-  document.querySelector("body").classList.remove("preload");
-  document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requiresJS"));
-});
+setTheme(localStorage.getItem("theme") || "light"); //default theme is light
 
 /*export function drawBG() {
   const canvas: HTMLCanvasElement = document.getElementById("bgCanvas") as HTMLCanvasElement;
