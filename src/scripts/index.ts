@@ -48,6 +48,7 @@ setTheme(localStorage && localStorage.getItem("theme"));
 
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("preload");
+  document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requiresJS"));
 });
 
 /*export function drawBG() {
