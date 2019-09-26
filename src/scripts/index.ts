@@ -1,14 +1,14 @@
 import {Workbox} from "workbox-window";
 
-//Hide stuff that requires JS
+//used for hiding stuff that requires JS
 document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requiresJS"));
 
-//Enable transitions after page is loaded to prevent flash of light theme if another theme is in use
+//re-enable transitions after page is loaded to prevent flash of light theme if another theme is in use
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("preload");
 });
 
-//Use service worker, and display update message if needed
+//use service worker, and display update message if needed
 if ("serviceWorker" in navigator) {
   const wb = new Workbox("service-worker.js");
   wb.addEventListener("installed", event => {
@@ -21,39 +21,39 @@ if ("serviceWorker" in navigator) {
 
 //used for setting theme on both page load and theme selection
 export function setTheme(theme: string): void {
-  let bg: string, fg: string, fgo: string, dv: string;
-  const style = document.documentElement.style;
+  const themeData = {
+    "light": {
+      "bg": "#fafafa",
+      "fg": "#000",
+      "fgo": "#0002",
+      "dv": "#7d98a1",
+      "lc": "var(--middarkblue)"
+    },
+    "dark": {
+      "bg": "#282828",
+      "fg": "#fafafa",
+      "fgo": "#fff2",
+      "dv": "#d7dee2",
+      "lc": "var(--blue)"
+    },
+    "black": {
+      "bg": "#000",
+      "fg": "#fafafa",
+      "fgo": "#fff3",
+      "dv": "#d7dee2",
+      "lc": "var(--blue)"
+    }
+  };
 
-  if (theme === "light") {
-    bg = "#fafafa";
-    fg = "#000";
-    fgo = "#0002";
-    dv = "#7d98a1";
-  } else if (theme === "dark") {
-    bg = "#282828";
-    fg = "#fafafa";
-    fgo = "#fff2";
-    dv = "#d7dee2";
-  } else {
-    bg = "#000";
-    fg = "#fafafa";
-    fgo = "#fff3";
-    dv = "#d7dee2";
-  }
+  if (!Object.keys(themeData).includes(theme)) theme = "light"; //default to light theme in case of no/invalid value
 
-  document.querySelector("meta[name='theme-color']").setAttribute("content", bg);
-  style.setProperty("--bg", bg);
-  style.setProperty("--fg", fg);
-  style.setProperty("--fgo", fgo);
-  style.setProperty("--dv", dv);
+  Object.entries(themeData[theme]).forEach(([property, value]) => {
+    document.documentElement.style.setProperty(`--${property}`, value as string);
+  });
+  document.querySelector("meta[name='theme-color']").setAttribute("content", themeData[theme].bg);
 
   if (localStorage) localStorage.setItem("theme", theme);
   (document.querySelector(`input[value='${theme}']`) as HTMLInputElement).checked = true;
 }
 
-setTheme(localStorage.getItem("theme") || "light"); //default theme is light
-
-/*export function drawBG() {
-  const canvas: HTMLCanvasElement = document.getElementById("bgCanvas") as HTMLCanvasElement;
-  const context = canvas.getContext("2d");
-}*/
+setTheme(localStorage.getItem("theme"));

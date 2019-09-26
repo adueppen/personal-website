@@ -9,9 +9,11 @@ $transitionDuration: .25s;
   --fg: #000;
   --fgo: #0002;
   --dv: #7d98a1;
+  --lc: var(--middarkblue);
 
   //primary colors, thanks https://github.com/zavukodlak!
   --darkblue: #002890;
+  --middarkblue: #1d61c0; //average of blue and darkblue
   --blue: #3a99f0;
   --green: #0cc355;
   --gray: #d7dee2;
@@ -124,8 +126,12 @@ nav ul {
   justify-content: end;
 }
 
-a:visited, a {
+.nav-item a, .nav-item a:visited {
   color: var(--fg);
+}
+
+a, a:visited {
+  color: var(--lc);
 }
 
 #newContent {
