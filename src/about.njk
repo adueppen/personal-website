@@ -17,12 +17,9 @@ date: 0000-01-03 #hacky way to sort properly
   Here are some relevant links, including me on other platforms.
   In general, any account with the username <b>adueppen</b> is probably me.
 </p>
-<ul> {# todo: stick these in siteData at some point #}
-  <li>Email: <a href="mailto:contact@ajd.sh">contact@ajd.sh</a></li>
-  <li>GitHub: <a href="https://github.com/adueppen" target="_blank" rel="noopener">@adueppen</a></li>
-  <li>LinkedIn: <a href="https://www.linkedin.com/in/alex-dueppen/" target="_blank" rel="noopener">/in/alex-dueppen/</a></li>
-  <li>Mastodon: <a href="https://tilde.zone/@adueppen" target="_blank" rel="noopener">@adueppen@tilde.zone</a></li>
-  <li>Reddit: <a href="https://www.reddit.com/user/adueppen" target="_blank" rel="noopener">/u/adueppen</a></li>
-  <li>Twitter: <a href="https://twitter.com/AlexDueppen" target="_blank" rel="noopener">@AlexDueppen</a></li>
+<ul>
+  {% for link in siteData.links -%}
+    <li>{{ link.siteName }}: <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.displayText }}</a></li>
+  {% endfor -%}
   <li><a href="/resume.pdf" target="_blank">Resume</a></li>
 </ul>

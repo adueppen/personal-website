@@ -18,8 +18,10 @@
     <p>Alex Dueppen</p>
     <nav>
       <ul>
-        {%- for nav in collections.toplevel -%}
-        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.title }}</a></li>
+        {% for nav in collections.toplevel -%}
+        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}">
+          <a href="{{ nav.url | url }}">{{ nav.data.title }}</a>
+        </li>
         {%- endfor -%}
       </ul>
     </nav>
