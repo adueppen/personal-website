@@ -1,4 +1,4 @@
-import {Workbox} from "workbox-window";
+import { Workbox } from "workbox-window";
 
 //used for hiding stuff that requires JS
 document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requiresJS"));
@@ -7,6 +7,8 @@ document.querySelectorAll(".requiresJS").forEach(el => el.classList.remove("requ
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("preload");
 });
+
+window.addEventListener("beforeinstallprompt", e => e.preventDefault()); //suppress PWA install infobar
 
 //use service worker, and display update message if needed
 if ("serviceWorker" in navigator) {
