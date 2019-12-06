@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/adueppen
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ajd.sh
+  * I am adueppen (https://keybase.io/adueppen) on keybase.
+  * I have a public key ASDl5HlamajRDNMFLvc2Ln6dHsMl8bW3wzpIY56NzNTbfwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e5e4795a99a8d10cd3052ef7362e7e9d1ec325f1b5b7c33a48639e8dccd4db7f0a",
+      "host": "keybase.io",
+      "kid": "0120e5e4795a99a8d10cd3052ef7362e7e9d1ec325f1b5b7c33a48639e8dccd4db7f0a",
+      "uid": "e766a19ab595fa44c3a1c0378d2a3319",
+      "username": "adueppen"
+    },
+    "merkle_root": {
+      "ctime": 1575644137,
+      "hash": "01bdbeff4708751cbe3fd2996e4c9dac6e4c96aec07233120af7614afb88f0ef938de66d4419f8c2c7dee56d1c07986f87f11780081574ec0d8bfcb5824ad240",
+      "hash_meta": "edb4e2f4611963c9d7c01d25c798ec4737407bd69c385ec1d7408a5ffafe53ef",
+      "seqno": 12513803
+    },
+    "service": {
+      "entropy": "EgBT1SRgYrYAuUinA7ypKBcn",
+      "hostname": "ajd.sh",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.0.0"
+  },
+  "ctime": 1575644145,
+  "expire_in": 504576000,
+  "prev": "5d1388d377c031bc549e507b0d5e0e22e39b25207bb79e6a0a3c45e5013477dd",
+  "seqno": 18,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg5eR5Wpmo0QzTBS73Ni5+nR7DJfG1t8M6SGOejczU238Kp3BheWxvYWTESpcCEsQgXROI03fAMbxUnlB7DV4OIuObJSB7t55qCjxF5QE0d93EIA11M+85jAQwccZAaZCyWuOnehjRv0FtyLciGbt+ubezAgHCo3NpZ8RAoO4PcJkPqIYYkqCOPGwFIIoQ+WbUscWCsp5//mmgZFWNDD3AEtchb4xIKShZleeh3cGXjT5Y7C6GWFyazpdGCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAmsW1k2+V6VrkE/qJGFi71P4AMJ7LbRb96gIg6lb+8Uo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/adueppen
+
+==================================================================
