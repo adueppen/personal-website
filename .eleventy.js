@@ -1,8 +1,10 @@
-const pluginPWA = require("eleventy-plugin-pwa");
+const PWAPlugin = require("eleventy-plugin-pwa");
+const navPlugin = require("@11ty/eleventy-navigation");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginPWA);
+  eleventyConfig.addPlugin(PWAPlugin);
+  eleventyConfig.addPlugin(navPlugin);
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
   if (process.env.NODE_ENV === "prod") {

@@ -60,7 +60,6 @@ footer {
 
   nav ul {
     width: 100%;
-    display: inline-flex;
     justify-content: space-evenly;
   }
 
@@ -83,13 +82,14 @@ nav {
 }
 
 nav ul {
+  display: inline-flex;
   padding: 0;
   margin: 0;
   line-height: 56px;
 }
 
 .nav-item {
-  display: inline-block;
+  list-style: none;
   width: 80px;
   text-align: center;
   border-bottom: $dividerHeight solid;

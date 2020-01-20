@@ -17,13 +17,11 @@
   <header>
     <p>Alex Dueppen</p>
     <nav>
-      <ul>
-        {% for nav in collections.toplevel -%}
-        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}">
-          <a href="{{ nav.url | url }}">{{ nav.data.title }}</a>
-        </li>
-        {%- endfor -%}
-      </ul>
+      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+        listItemClass: "nav-item",
+        activeListItemClass: "nav-item-active",
+        activeKey: eleventyNavigation.key
+      }) | safe }}
     </nav>
   </header>
   <main>{{ content | safe }}</main>
