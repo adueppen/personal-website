@@ -16,11 +16,11 @@ eleventyNavigation:
 <h2>Links</h2>
 <p>
   Here are some relevant links, including me on other platforms.
-  In general, any account with the username <b>adueppen</b> is probably me.
+  In general, any account with the username <strong>adueppen</strong> is <i>probably</i> me.
 </p>
 <ul>
-  {% for link in siteData.links -%}
-    <li>{{ link.siteName }}: <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.displayText }}</a></li>
+  {% for i, site in siteData.links -%}
+    <li>{{ site.siteName }}: <a href="{{ site.url }}" target="_blank" rel="noopener">{{ site.displayText }}</a></li>
   {% endfor -%}
   <li><a href="/resume.pdf" target="_blank">Resume</a></li>
 </ul>
