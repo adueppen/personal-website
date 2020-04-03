@@ -58,4 +58,5 @@ export function setTheme(theme: string): void {
   (document.querySelector(`input[value='${theme}']`) as HTMLInputElement).checked = true;
 }
 
+(window as any).setTheme = setTheme;
 setTheme(localStorage.getItem("theme"));
