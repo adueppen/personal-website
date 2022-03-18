@@ -2,6 +2,11 @@
   "repoLink": "https://github.com/adueppen/personal-website",
   "themeColor": "#ffffff",
   "links": {
+    "discord": {
+      "siteName": "Discord",
+      "url": "https://discordapp.com/users/321117879053451264",
+      "displayText": "adueppen#7189"
+    },
     "email": {
       "siteName": "Email",
       "url": "mailto:contact@ajd.sh",
@@ -26,11 +31,6 @@
       "siteName": "Mastodon",
       "url": "https://tilde.zone/@adueppen",
       "displayText": "@adueppen@tilde.zone"
-    },
-    "reddit": {
-      "siteName": "Reddit",
-      "url": "https://www.reddit.com/user/adueppen",
-      "displayText": "/u/adueppen"
     },
     "twitter": {
       "siteName": "Twitter",

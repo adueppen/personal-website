@@ -4,14 +4,28 @@ $dividerHeight: 4px;
 $standardPadding: 0 1em;
 $transitionDuration: .25s;
 
-:root {
-  --bg: #fafafa;
-  --fg: #000;
-  --fgo: #0002;
-  --dv: #7d98a1;
-  --lc: var(--middarkblue);
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --fg: #000;
+    --fgo: #0002;
+    --dv: #7d98a1;
+    --lc: var(--middarkblue);
+  }
+}
 
-  //primary colors, thanks https://github.com/zavukodlak!
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #282828;
+    --fg: #fafafa;
+    --fgo: #fff2;
+    --dv: #d7dee2;
+    --lc: var(--blue);
+  }
+}
+
+:root {
+  //primary colors, thanks https://github.com/vukkashin!
   --darkblue: #002890;
   --middarkblue: #1d61c0; //average of blue and darkblue
   --blue: #3a99f0;

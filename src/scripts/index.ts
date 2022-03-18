@@ -47,7 +47,10 @@ export function setTheme(theme: string): void {
     }
   };
 
-  if (!Object.keys(themeData).includes(theme)) theme = "light"; //default to light theme in case of no/invalid value
+  if (!Object.keys(themeData).includes(theme)) {  //default to preferred color scheme if no value in localStorage
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light';
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+  }
 
   Object.entries(themeData[theme]).forEach(([property, value]) => {
     document.documentElement.style.setProperty(`--${property}`, value as string);
