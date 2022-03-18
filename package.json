@@ -33,7 +33,9 @@
     "includes": "./src/includes",
     "data": "./src/data"
   },
-  "browserslist": ["defaults"],
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
@@ -53,7 +55,7 @@
   },
   "dependencies": {
     "acorn": "^8.7.0",
-    "eleventy-plugin-pwa": "^1.0.8",
+    "@piraces/eleventy-plugin-pwa": "^1.1.2",
     "node-sass": "^7.0.1",
     "source-map-loader": "^3.0.1",
     "ts-loader": "^9.2.8",

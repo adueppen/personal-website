@@ -1,4 +1,4 @@
-const PWAPlugin = require("eleventy-plugin-pwa");
+const PWAPlugin = require("@piraces/eleventy-plugin-pwa");
 const navPlugin = require("@11ty/eleventy-navigation");
 const htmlmin = require("html-minifier");
 
