@@ -5,7 +5,6 @@
   "description": "Personal website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
     "eleventy:default": "npx eleventy",
     "eleventy:watch": "npx eleventy --watch",
@@ -41,25 +40,23 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@babel/core": "^7.17.7",
     "@babel/preset-env": "^7.16.11",
+    "@piraces/eleventy-plugin-pwa": "^1.1.2",
     "@types/workbox-window": "^4.3.4",
+    "acorn": "^8.7.0",
     "autoprefixer": "^10.4.3",
     "babel-loader": "^8.2.3",
     "cssnano": "^5.1.4",
     "html-minifier": "^4.0.0",
     "light-server": "^2.9.1",
+    "node-sass": "^7.0.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.11",
     "postcss-cli": "^9.1.0",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "dependencies": {
-    "acorn": "^8.7.0",
-    "@piraces/eleventy-plugin-pwa": "^1.1.2",
-    "node-sass": "^7.0.1",
     "source-map-loader": "^3.0.1",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
     "workbox-window": "^6.5.1"
   }
 }

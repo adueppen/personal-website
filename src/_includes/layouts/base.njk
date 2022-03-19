@@ -26,22 +26,24 @@
   </header>
   <main>{{ content | safe }}</main>
   <footer>
-    <div class="themeSelect requiresJS" aria-label="Theme selection">
-      <label>
-        <input type="radio" name="theme" value="light" onclick="setTheme('light')">
-        Light
-      </label>
-      <label>
-        <input type="radio" name="theme" value="dark" onclick="setTheme('dark')">
-        Dark
-      </label>
-      <label>
-        <input type="radio" name="theme" value="black" onclick="setTheme('black')">
-        Black
-      </label>
-    </div>
-    <div class="source">
-      <a href="{{ siteData.repoLink }}" target="_blank" rel="noopener">Website Source Code</a>
+    <div class="footerContent">
+      <div class="themeSelect requiresJS" aria-label="Theme selection">
+        <label>
+          <input type="radio" name="theme" value="light" onclick="setTheme('light')">
+          Light
+        </label>
+        <label>
+          <input type="radio" name="theme" value="dark" onclick="setTheme('dark')">
+          Dark
+        </label>
+        <label>
+          <input type="radio" name="theme" value="black" onclick="setTheme('black')">
+          Black
+        </label>
+      </div>
+      <div class="source">
+        <a href="{{ siteData.repoLink }}" target="_blank" rel="noopener">Website Source Code</a>
+      </div>
     </div>
   </footer>
   <div class="newContent requiresJS" onclick="window.location.reload();">
