@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(navPlugin);
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
+  eleventyConfig.setLibrary("md", require("markdown-it")({"html": true}).use(require("markdown-it-attrs")));
   if (process.env.NODE_ENV === "prod") {
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
       if (outputPath.endsWith(".html")) {

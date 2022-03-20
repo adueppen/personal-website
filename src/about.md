@@ -26,6 +26,6 @@ Here are some relevant links, including me on other platforms. In general, any a
 is most likely me.
 
 {% for i, site in siteData.links -%}
-- {{ site.siteName }}: <a href="{{ site.url }}" target="_blank" rel="noopener">{{ site.displayText }}</a>
+- {{ site.siteName }}: [{{ site.displayText }}]({{ site.url }}){target=_blank rel=noopener}
 {% endfor -%}
 - [Resume](/resume.pdf)
