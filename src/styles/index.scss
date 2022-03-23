@@ -1,4 +1,4 @@
-@import '_reset.scss';
+@import 'reset';
 
 $dividerHeight: 4px;
 $standardPadding: 0 1em;
@@ -45,7 +45,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.preload, .preload * {
+.preload, .preload :not(.nav-item a) { //avoid potential flash of wrong color, but allow nav hover effect without JS
   transition: none !important;
 }
 
