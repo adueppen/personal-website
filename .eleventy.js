@@ -4,6 +4,10 @@ const linkPlugin = require("@aloskutov/eleventy-plugin-external-links");
 const path = require("path");
 const htmlmin = require("html-minifier");
 const postcss = require("postcss");
+const browserify = require("browserify");
+const tsify = require("tsify");
+const uglifyify = require("uglifyify");
+const sToString = require("stream-to-string");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(PWAPlugin);
@@ -39,7 +43,7 @@ module.exports = function (eleventyConfig) {
     ],
     options: {
       syntax: require("postcss-scss"),
-      map: process.env.NODE_ENV !== "prod",
+      map: process.env.NODE_ENV !== "dev",
     }
   }
   eleventyConfig.addExtension("scss", {
@@ -49,15 +53,31 @@ module.exports = function (eleventyConfig) {
       return async ({page}) => {
         return postcss(postcssConfig.plugins)
           .process(inputContent, {...postcssConfig.options, from: inputPath, to: page.outputPath})
-          .then((result) => result.css);
+          .then(result => result.css);
       };
+    }
+  });
+
+  //TS -> JS compilation, bundling, and optimization
+  eleventyConfig.addExtension("ts", {
+    outputFileExtension: "js",
+    compile: async function (inputContent, inputPath) {
+      return async () => {
+        return sToString(
+          browserify(inputPath, {debug: process.env.NODE_ENV === "dev"})
+            .plugin(tsify, {extends: "@tsconfig/recommended/tsconfig.json"})
+            .transform(uglifyify, {global: true})
+            .bundle()
+            .on("error", error => console.error(error.toString()))
+        ).then(result => result);
+      }
     }
   });
 
   return {
     dir: {input: "src", output: "dist", data: "_data"},
     passthroughFileCopy: true,
-    templateFormats: ["njk", "md", "html", "scss"],
+    templateFormats: ["njk", "md", "html", "scss", "ts"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };

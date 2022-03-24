@@ -23,7 +23,7 @@ if ("serviceWorker" in navigator) {
 
 //used for setting theme on both page load and theme selection
 export function setTheme(theme: string): void {
-  const themeData = {
+  const themeData: { [key: string]: { [key: string]: string } } = {
     "light": {
       "bg": "#fafafa",
       "fg": "#000",

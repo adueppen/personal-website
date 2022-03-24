@@ -5,10 +5,7 @@
  "delay": 100,
  "quiet": true,
  "watchexps": [
-    "src/scripts/**/*.ts # npm run scripts:dev",
-    "src/styles/**/*.scss",
-    "dist/**/*.html",
-    "src/images/"
+    "dist/**/*"
  ],
  "http2": false,
  "open": false
