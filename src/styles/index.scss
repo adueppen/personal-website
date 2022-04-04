@@ -90,9 +90,19 @@ footer {
   }
 }
 
+@media screen and (min-width: $contentWidth) {
+  main > :is(p, ul) {
+    margin-left: 1em;
+  }
+}
+
+.post-title, .post-date {
+  display: inline;
+}
+
 main {
   padding: $standardPadding;
-  margin: 0 auto;
+  margin: 1.5em auto;
   max-width: $contentWidth;
 }
 
@@ -151,7 +161,7 @@ nav ul {
   margin-left: auto;
 }
 
-.nav-item a, .nav-item a:visited {
+.nav-item :is(a, a:visited) {
   color: var(--fg);
 }
 

@@ -6,4 +6,9 @@ eleventyNavigation:
   key: Posts
   order: 3
 ---
-## Coming soon!
+## Recent Posts
+{% for post in collections.posts | reverse %}
+- [{{ post.data.title }}]({{ post.url | url }}) - {{ post.date | toISODate }}
+{% endfor %}
+
+[//]: # (TODO: add section for external posts written by me once I have some)

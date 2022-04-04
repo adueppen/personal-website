@@ -7,7 +7,7 @@ const postcss = require("postcss");
 const browserify = require("browserify");
 const tsify = require("tsify");
 const uglifyify = require("uglifyify");
-const sToString = require("stream-to-string");
+const streamToString = require("stream-to-string");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(PWAPlugin);
@@ -19,6 +19,9 @@ module.exports = function (eleventyConfig) {
   //eleventyConfig.setLibrary("md", require("markdown-it")({"html": true}).use(require("markdown-it-attrs")));
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
+  eleventyConfig.addFilter('toISODate', date => {
+    return date.toISOString().split('T')[0]
+  })
 
   //HTML optimization
   if (process.env.NODE_ENV === "prod") {
@@ -63,7 +66,7 @@ module.exports = function (eleventyConfig) {
     outputFileExtension: "js",
     compile: async function (inputContent, inputPath) {
       return async () => {
-        return sToString(
+        return streamToString(
           browserify(inputPath, {debug: process.env.NODE_ENV === "dev"})
             .plugin(tsify, {extends: "@tsconfig/recommended/tsconfig.json"})
             .transform(uglifyify, {global: true})
