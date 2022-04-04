@@ -1,6 +1,6 @@
 ---
 title: Welcome to my blog!
-blurb: After 2 years, I'm finally updating my website and starting a blog! Let's go over what I'll be writing about.
+description: After 2 years, I'm finally updating my site and starting a blog! Let's go over what I'll be writing about.
 date: 2022-04-03
 layout: layouts/post.njk
 tags:
