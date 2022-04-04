@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
   //eleventyConfig.setLibrary("md", require("markdown-it")({"html": true}).use(require("markdown-it-attrs")));
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
+  eleventyConfig.addPassthroughCopy("src/styles/fonts");
   eleventyConfig.addFilter('toISODate', date => {
     return date.toISOString().split('T')[0]
   })

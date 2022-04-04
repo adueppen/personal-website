@@ -12,7 +12,7 @@ window.addEventListener("beforeinstallprompt", e => e.preventDefault()); //suppr
 
 //use service worker, and display update message if needed
 if ("serviceWorker" in navigator) {
-  const wb = new Workbox("service-worker.js");
+  const wb = new Workbox("/service-worker.js");
   wb.addEventListener("installed", event => {
     if (event.isUpdate) {
       document.getElementById("newContent").style.setProperty("display", "block");
