@@ -6,7 +6,7 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="{{ siteData.themeColor }}">
   {% metagen
-    title="Alex Dueppen: " + eleventyNavigation.key or title,
+    title="Alex Dueppen: " + title or eleventyNavigation.key,
     desc=description,
     url=siteData.url + page.url,
     img=siteData.url + (thumb or "/images/icons/icon-512x512.png"),
@@ -14,7 +14,7 @@
     twitter_card_type=card_type,
     twitter_handle=siteData.links.twitter.username,
     name="Alex Dueppen" %}
-  <title>Alex Dueppen: {{ eleventyNavigation.key or title }}</title>
+  <title>Alex Dueppen: {{ title or eleventyNavigation.key }}</title>
   <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body class="preload" itemscope itemtype="http://schema.org/WebPage">
