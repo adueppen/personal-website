@@ -1,5 +1,6 @@
 {
   "repoLink": "https://github.com/adueppen/personal-website",
+  "url": "https://ajd.sh",
   "themeColor": "#ffffff",
   "links": {
     "discord": {
@@ -15,7 +16,8 @@
     "github": {
       "siteName": "GitHub",
       "url": "https://github.com/adueppen",
-      "displayText": "@adueppen"
+      "displayText": "@adueppen",
+      "username": "adueppen"
     },
     "keybase": {
       "siteName": "Keybase",
@@ -30,12 +32,14 @@
     "mastodon": {
       "siteName": "Mastodon",
       "url": "https://tilde.zone/@adueppen",
-      "displayText": "@adueppen@tilde.zone"
+      "displayText": "@adueppen@tilde.zone",
+      "username": "adueppen@tilde.zone"
     },
     "twitter": {
       "siteName": "Twitter",
       "url": "https://twitter.com/AlexDueppen",
-      "displayText": "@AlexDueppen"
+      "displayText": "@AlexDueppen",
+      "username": "AlexDueppen"
     },
     "uu": {
       "siteName": "Unicorn Utterances",

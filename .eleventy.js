@@ -1,6 +1,7 @@
 const PWAPlugin = require("@piraces/eleventy-plugin-pwa");
 const navPlugin = require("@11ty/eleventy-navigation");
 const linkPlugin = require("@aloskutov/eleventy-plugin-external-links");
+const metaPlugin = require("eleventy-plugin-metagen");
 const path = require("path");
 const htmlmin = require("html-minifier");
 const postcss = require("postcss");
@@ -10,11 +11,12 @@ const uglifyify = require("uglifyify");
 const streamToString = require("stream-to-string");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(PWAPlugin);
+  if (process.env.NODE_ENV === "prod") eleventyConfig.addPlugin(PWAPlugin);
   eleventyConfig.addPlugin(navPlugin);
   eleventyConfig.addPlugin(linkPlugin, {
     rel: ["noopener", "external"]
   });
+  eleventyConfig.addPlugin(metaPlugin);
   //reenable this if needed later on
   //eleventyConfig.setLibrary("md", require("markdown-it")({"html": true}).use(require("markdown-it-attrs")));
   eleventyConfig.addPassthroughCopy("src/images");
@@ -78,6 +80,10 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.setBrowserSyncConfig({
+    port: 4000,
+    delay: 100
+  });
   return {
     dir: {input: "src", output: "dist", data: "_data"},
     passthroughFileCopy: true,

@@ -5,11 +5,15 @@ date: 2022-04-03
 layout: layouts/post.njk
 tags:
 - meta
+
+eleventyNavigation:
+  key: blog-intro
+  parent: Posts
 ---
 
 It's been a while, huh? The last time I made any real changes to this site was 
-[exactly 2 years ago today](https://github.com/adueppen/personal-website/commit/543c4d6fb2f19660bcb83c9fea817cc7c911870a).
-A lot has changed since then, so I think it makes sense to go over that before I get into more details about this blog. 
+[exactly 2 years ago today](https://github.com/adueppen/personal-website/commit/543c4d6). A lot has changed since then,
+so I think it makes sense to go over that before I get into more details about this blog. 
 
 ### What even were the last 2 years?
 On April 3, 2020, things were pretty different, to say the least. After 4 months of working in my first office job, I
