@@ -4,7 +4,10 @@ description: In this series of posts, I'll be going into more detail about the C
   any sane person could possibly need. Let's just start with the basics for now though.
 date: 2022-05-26
 layout: layouts/post.njk
-thumb: typestar-7.jpg
+card_type: summary_large_image
+thumb: 
+  url: /posts/canon-typestar-part-1/typestar-7.jpg
+  alt: A photo of the Canon Typestar 7 typewriter with a piece of paper inserted and some text printed.
 header:
   url: typestar-7.jpg
   filter: true

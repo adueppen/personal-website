@@ -13,8 +13,8 @@
     title=pageTitle,
     desc=description,
     url=siteData.url + page.url,
-    img=siteData.url + (thumb or "/images/icons/icon-512x512.png"),
-    img_alt="Alex Dueppen logo",
+    img=siteData.url + (thumb.url or "/images/icons/icon-512x512.png"),
+    img_alt=(thumb.alt or "Alex Dueppen logo"),
     twitter_card_type=card_type,
     twitter_handle=siteData.links.twitter.username,
     name="Alex Dueppen" %}
