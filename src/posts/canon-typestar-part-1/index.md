@@ -232,4 +232,4 @@ caught my eye for a while. I really need to free up some space before I get anyt
 up some of my other "projects". Next on my list is extracting the data from the Typestyle cartridges and figuring out
 their format.
 
-![A photo showing one of the Canon Typestyle cartridges, disassembled.](soon.jpg "Soon")
+![A photo showing one of the Canon Typestyle cartridges, disassembled.](soon.jpg "Coming soon!")
