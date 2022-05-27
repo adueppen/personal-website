@@ -63,8 +63,14 @@ typings/
 # eleventy.js build output
 dist
 
+# eleventy-fetch cache
+.cache/
+
 #webstorm
 .idea/
 
 #stuff that I'm not ready to make public yet
 testing/
+
+# Local Netlify folder
+.netlify

@@ -29,21 +29,24 @@ export function setTheme(theme: string): void {
       "fg": "#000",
       "fgo": "#0002",
       "dv": "#7d98a1",
-      "lc": "var(--middarkblue)"
+      "lc": "var(--middarkblue)",
+      "hbr": "100%"
     },
     "dark": {
       "bg": "#282828",
       "fg": "#fafafa",
       "fgo": "#fff2",
       "dv": "#d7dee2",
-      "lc": "var(--blue)"
+      "lc": "var(--blue)",
+      "hbr": "75%"
     },
     "black": {
       "bg": "#000",
       "fg": "#fafafa",
       "fgo": "#fff3",
       "dv": "#d7dee2",
-      "lc": "var(--blue)"
+      "lc": "var(--blue)",
+      "hbr": "65%"
     }
   };
 

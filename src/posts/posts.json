@@ -1,5 +1,8 @@
 {
   "tags": [
     "posts"
+  ],
+  "extraStyles": [
+    "/styles/post.css"
   ]
 }

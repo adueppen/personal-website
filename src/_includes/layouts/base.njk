@@ -5,8 +5,12 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="{{ siteData.themeColor }}">
+  {% for font in siteData.coreFonts %}
+    <link rel="preload" as="font" href="{{ font }}" type="font/woff2" crossorigin>
+  {% endfor %}
+  {% set pageTitle = "Alex Dueppen: " + (title or eleventyNavigation.key) %}
   {% metagen
-    title="Alex Dueppen: " + title or eleventyNavigation.key,
+    title=pageTitle,
     desc=description,
     url=siteData.url + page.url,
     img=siteData.url + (thumb or "/images/icons/icon-512x512.png"),
@@ -14,8 +18,11 @@
     twitter_card_type=card_type,
     twitter_handle=siteData.links.twitter.username,
     name="Alex Dueppen" %}
-  <title>Alex Dueppen: {{ title or eleventyNavigation.key }}</title>
+  <title>{{ pageTitle }}</title>
   <link rel="stylesheet" href="/styles/index.css">
+  {% for stylesheet in extraStyles -%}
+    <link rel="stylesheet" href="{{ stylesheet }}">
+  {% endfor %}
 </head>
 <body class="preload" itemscope itemtype="http://schema.org/WebPage">
   <header>
@@ -24,8 +31,8 @@
       <ul>
         {%- for entry in navPages %}
           {%- set active = (entry.key == eleventyNavigation.key or entry.key == eleventyNavigation.parent) %}
-          <li class="nav-item{% if active %} nav-item-active{% endif %}">
-            <a href="{{ entry.url }}">{{ entry.key }}</a>
+          <li class="navItem{% if active %} navItemActive{% endif %}">
+            <a href="{{ entry.url }}" class="alwaysAnimate">{{ entry.key }}</a>
           </li>
         {%- endfor %}
       </ul>
@@ -35,18 +42,12 @@
   <footer>
     <div class="footerContent">
       <div class="themeSelect requiresJS" aria-label="Theme selection">
-        <label>
-          <input type="radio" name="theme" value="light" onclick="setTheme('light')">
-          Light
-        </label>
-        <label>
-          <input type="radio" name="theme" value="dark" onclick="setTheme('dark')">
-          Dark
-        </label>
-        <label>
-          <input type="radio" name="theme" value="black" onclick="setTheme('black')">
-          Black
-        </label>
+        {%- for theme in ["light", "dark", "black"] %}
+          <label>
+            <input type="radio" name="theme" value="{{ theme }}" onclick="setTheme('{{ theme }}')">
+            {{ theme | capitalize }}
+          </label>
+        {%- endfor %}
       </div>
       <div class="source">
         <a href="{{ siteData.repoLink }}" target="_blank" rel="noopener">Website Source Code</a>

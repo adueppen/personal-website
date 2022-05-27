@@ -1,10 +1,6 @@
-@import 'reset';
-@import 'fonts';
-
-$dividerHeight: 4px;
-$standardPadding: 0 1em;
-$transitionDuration: .25s;
-$contentWidth: 1024px;
+@import 'styles/reset';
+@import 'styles/vars';
+@import 'styles/fonts';
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -13,6 +9,7 @@ $contentWidth: 1024px;
     --fgo: #0002;
     --dv: #7d98a1;
     --lc: var(--middarkblue);
+    --hbr: 100%;
   }
 }
 
@@ -23,6 +20,7 @@ $contentWidth: 1024px;
     --fgo: #fff2;
     --dv: #d7dee2;
     --lc: var(--blue);
+    --hbr: 75%
   }
 }
 
@@ -46,7 +44,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.preload, .preload :not(.nav-item a) { //avoid potential flash of wrong color, but allow nav hover effect without JS
+.preload, .preload :not(.alwaysAnimate) { //avoid potential flash of wrong color, but allow nav hover effect without JS
   transition: none !important;
 }
 
@@ -79,8 +77,12 @@ footer {
     justify-content: space-evenly;
   }
 
-  ul .nav-item {
+  ul .navItem {
     width: 25%;
+  }
+
+  header {
+    box-shadow: none; //hide border when covered by nav items, this helps avoid 1px of it showing on HiDPI displays
   }
 }
 
@@ -92,19 +94,21 @@ footer {
 }
 
 @media screen and (min-width: $contentWidth) {
-  main > :is(p, ul) {
-    margin-left: 1em;
+  main :is(p, ul, figure) {
+    margin-left: $contentMargin;
   }
-}
-
-.post-title, .post-date {
-  display: inline;
 }
 
 main {
   padding: $standardPadding;
-  margin: 1.5em auto;
+  margin: $contentMargin auto;
   max-width: $contentWidth;
+  text-align: justify;
+  box-sizing: content-box;
+}
+
+@include headers {
+  text-align: start;
 }
 
 .footerContent {
@@ -121,40 +125,40 @@ nav ul {
   line-height: 56px;
 }
 
-.nav-item {
+.navItem {
   list-style: none;
   width: 120px;
   text-align: center;
   border-bottom: $dividerHeight solid;
 }
 
-.nav-item-active {
+.navItemActive {
   font-weight: bold;
 }
 
-.nav-item:nth-of-type(1) {
+.navItem:nth-of-type(1) {
   border-bottom-color: var(--darkblue);
 }
 
-.nav-item:nth-of-type(2) {
+.navItem:nth-of-type(2) {
   border-bottom-color: var(--middarkblue);
 }
 
-.nav-item:nth-of-type(3) {
+.navItem:nth-of-type(3) {
   border-bottom-color: var(--blue);
 }
 
-.nav-item:nth-of-type(4) {
+.navItem:nth-of-type(4) {
   border-bottom-color: var(--green);
 }
 
-.nav-item a {
+.navItem a {
   text-decoration: none;
   display: block;
   transition: all $transitionDuration;
 }
 
-.nav-item a:hover {
+.navItem a:hover {
   background-color: var(--fgo);
 }
 
@@ -162,7 +166,7 @@ nav ul {
   margin-left: auto;
 }
 
-.nav-item :is(a, a:visited) {
+.navItem :is(a, a:visited) {
   color: var(--fg);
 }
 

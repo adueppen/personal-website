@@ -6,7 +6,7 @@ eleventyNavigation:
   key: About
   order: 2
 ---
-## Who am I?
+# Who am I?
 
 I've had a passion for computers for nearly as long as I can remember, and I have fond memories of playing around on my
 mom's old Macintosh Centris in my bedroom. This passion has shaped much of my life since then. I took every computer
@@ -20,7 +20,7 @@ forgotten devices as well as anything else I feel like writing about.
 
 My pronouns are he/they (I don't have a particular preference).
 
-## Links
+# Links
 
 Here are some relevant links, including me on other platforms. In general, any account with the username **adueppen**
 is most likely me.

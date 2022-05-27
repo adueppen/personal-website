@@ -1,5 +1,14 @@
 ---
 layout: layouts/base.njk
 ---
-<h2 class="post-title">{{ title }}</h2><i class="post-date"> - {{ date | toISODate }}</i>
-{{ content | safe }}
+{%- if header %}
+  <a href="{{ header.url }}" target="_blank">
+    <img src="{{ header.url }}" alt="{{ header.alt }}" class="headerImg{% if header.filter %} themeFilter{% endif %}">
+  </a>
+{%- endif %}
+<article>
+  <div class="postTitle">
+    <h1>{{ title }}</h1><i> -&nbsp;{{ date | toISODate }}</i>
+  </div>
+  {{ content | safe }}
+</article>

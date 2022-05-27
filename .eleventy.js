@@ -2,60 +2,140 @@ const PWAPlugin = require("@piraces/eleventy-plugin-pwa");
 const navPlugin = require("@11ty/eleventy-navigation");
 const linkPlugin = require("@aloskutov/eleventy-plugin-external-links");
 const metaPlugin = require("eleventy-plugin-metagen");
+const imgOptPlugin = require("eleventy-img-helper");
+
 const path = require("path");
 const htmlmin = require("html-minifier");
 const postcss = require("postcss");
-const browserify = require("browserify");
-const tsify = require("tsify");
-const uglifyify = require("uglifyify");
-const streamToString = require("stream-to-string");
+const esbuild = require("esbuild");
 
 module.exports = function (eleventyConfig) {
-  if (process.env.NODE_ENV === "prod") eleventyConfig.addPlugin(PWAPlugin);
+  //main 11ty config
+  if (process.env.NODE_ENV === "prod") {
+    const netFirst = ["html", "css", "js", "json"];
+    const staleWhileRe = ["ttf", "woff", "woff2"];
+    const allExtensions = netFirst.concat(staleWhileRe);
+    eleventyConfig.addPlugin(PWAPlugin, {
+      sourcemap: false,
+      globPatterns: [`*.{${allExtensions}}`, `**/*.{${allExtensions}}`],
+      runtimeCaching: [
+        {
+          handler: "NetworkFirst",
+          urlPattern: new RegExp(`^.*\\.(${netFirst.join("|")})$`)
+        },
+        {
+          handler: "CacheFirst",
+          urlPattern: new RegExp(`^.*\\.(${staleWhileRe.join("|")})$`)
+        }
+      ]
+    });
+  }
   eleventyConfig.addPlugin(navPlugin);
+  //TODO: this plugin lacks the option but consider adding a class to all external links with a symbol and possibly
+  // color to indicate that they're external (something like what wikipedia has)
   eleventyConfig.addPlugin(linkPlugin, {
     rel: ["noopener", "external"]
   });
   eleventyConfig.addPlugin(metaPlugin);
-  //reenable this if needed later on
-  //eleventyConfig.setLibrary("md", require("markdown-it")({"html": true}).use(require("markdown-it-attrs")));
+  eleventyConfig.setLibrary("md", require("markdown-it")({html: true})
+    .use(require("markdown-it-attrs"))
+    .use(require("markdown-it-image-figures"), {
+      figcaption: "title",
+      link: true
+    })
+    //.use(require("markdown-it-linkify-images"), {target: "_blank"})
+  );
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
   eleventyConfig.addPassthroughCopy("src/styles/fonts");
-  eleventyConfig.addFilter('toISODate', date => {
-    return date.toISOString().split('T')[0]
-  })
+  //currently passthrough copy with a glob makes live reload not work on that dir, so only do in prod
+  if (process.env.NODE_ENV === "prod") eleventyConfig.addPassthroughCopy("src/posts/*/*.{jpg,png,pdf}");
+  eleventyConfig.setBrowserSyncConfig({
+    port: 4000,
+    delay: 100
+  });
 
-  //HTML optimization
-  if (process.env.NODE_ENV === "prod") {
-    eleventyConfig.addTransform("htmlmin", function (content) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        return htmlmin.minify(content, {
+  eleventyConfig.addFilter("toISODate", date => {
+    return date.toISOString().split("T")[0]
+  });
+
+  const imgOptConfig = {
+    formats: ["avif", "webp", "jpeg"],
+    hashLength: 4,
+    filenameFormat: (id, src, width, format) => {
+      let filename = path.basename(src, path.extname(src)).split("-")[0];
+      return `${filename}-${id}-${width}.${format}`
+    },
+    sharpAvifOptions: {
+      quality: 75
+    },
+    selectors: {
+      ".headerImg": {
+        widths: [720, 1440, 2160],
+        sizes: "100vw",
+        htmlFunction: (metadata, options, attributes) => {
+          let newImgAttrs = {
+            src: metadata.jpeg[0].url,
+            loading: "lazy",
+            decoding: "async"
+          };
+          return `<picture>
+          ${Object.values(metadata).map(imageFormat => {
+            return `<source
+              type="${imageFormat[0].sourceType}"
+              srcset="${imageFormat.map(entry => entry.srcset).join(", ")}"
+              sizes="${options.sizes}">`;
+          }).join("\n")}
+            <img ${Object.entries({...attributes, ...newImgAttrs}).map(attr => `${attr[0]}="${attr[1]}"`).join(" ")}>
+          </picture>`;
+        }
+      },
+      "article img": {
+        widths: [720, 1080],
+        sizes: "(min-width: 744px) 720px, 100vw"
+      },
+      "img[data-nl]": {
+        formats: ["webp", "png"],
+        sharpWebpOptions: {
+          nearLossless: true,
+          quality: 50 //good enough for my purposes vs lossy and avoids diminishing returns
+        },
+      }
+    },
+    postFunction: (inputContent) => {
+      if (process.env.NODE_ENV === "prod") {
+        return htmlmin.minify(inputContent, {
           useShortDoctype: true,
           removeComments: true,
           collapseWhitespace: true
-        });
+        })
       }
-      return content;
-    });
-  }
+      return inputContent;
+    }
+  };
+
+  eleventyConfig.addPlugin(imgOptPlugin, imgOptConfig);
 
   //SCSS -> CSS compilation, prefixing, and optimization
-  const postcssConfig = {
-    plugins: [
-      require("@csstools/postcss-sass"),
-      require("autoprefixer"),
-      ...process.env.NODE_ENV === "prod" ? [require("cssnano")({preset: "default"})] : []
-    ],
-    options: {
-      syntax: require("postcss-scss"),
-      map: process.env.NODE_ENV !== "dev",
-    }
-  }
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css",
     compile: async function (inputContent, inputPath) {
-      if (path.parse(inputPath).name.startsWith("_")) return; //TODO: make it so I can put SCSS partials in _includes
+      let postcssConfig = {
+        plugins: [
+          require("@csstools/postcss-sass")({
+            includePaths: [
+              path.dirname(inputPath) || ".",
+              `./${this.config.inputDir}/${this.config.dir.includes}`
+            ]
+          }),
+          require("autoprefixer"),
+          ...process.env.NODE_ENV === "prod" ? [require("cssnano")({preset: "default"})] : []
+        ],
+        options: {
+          syntax: require("postcss-scss"),
+          map: process.env.NODE_ENV !== "dev",
+        }
+      }
       return async ({page}) => {
         return postcss(postcssConfig.plugins)
           .process(inputContent, {...postcssConfig.options, from: inputPath, to: page.outputPath})
@@ -69,21 +149,16 @@ module.exports = function (eleventyConfig) {
     outputFileExtension: "js",
     compile: async function (inputContent, inputPath) {
       return async () => {
-        return streamToString(
-          browserify(inputPath, {debug: process.env.NODE_ENV === "dev"})
-            .plugin(tsify, {extends: "@tsconfig/recommended/tsconfig.json"})
-            .transform(uglifyify, {global: true})
-            .bundle()
-            .on("error", error => console.error(error.toString()))
-        ).then(result => result);
-      }
+        return esbuild.build({
+          entryPoints: [inputPath],
+          bundle: true,
+          minify: process.env.NODE_ENV !== "dev",
+          write: false
+        }).then(result => result.outputFiles[0].text);
+      };
     }
   });
 
-  eleventyConfig.setBrowserSyncConfig({
-    port: 4000,
-    delay: 100
-  });
   return {
     dir: {input: "src", output: "dist", data: "_data"},
     passthroughFileCopy: true,

@@ -1,0 +1,55 @@
+@import 'styles/vars';
+
+.postTitle {
+  text-align: start;
+}
+
+.postTitle :is(h1, i) {
+  display: inline;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.headerImg {
+  margin: -$contentMargin -50vw 1em;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  max-height: 256px;
+  position: relative;
+  object-fit: cover;
+}
+
+.themeFilter {
+  filter: brightness(var(--hbr));
+  transition: filter $transitionDuration;
+}
+
+@media screen and (max-width: $contentWidth) {
+  .headerImg {
+    aspect-ratio: 7 / 2;
+  }
+}
+
+article img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+article img[width][height] {
+  height: auto;
+}
+
+figure { //TODO idea: make the entire <figure> a slightly different color that stretches all the way to the edges of the screen to make it clear what it is
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-style: italic;
+  text-align: center;
+}

@@ -6,8 +6,9 @@ eleventyNavigation:
   key: Posts
   order: 3
 ---
-## Recent Posts
-{% for post in collections.posts | reverse %}
+# Recent Posts
+
+{% for post in collections.posts | reverse -%}
 - [{{ post.data.title }}]({{ post.url | url }}) - {{ post.date | toISODate }}
 {% endfor %}
 

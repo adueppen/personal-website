@@ -2,6 +2,11 @@
   "repoLink": "https://github.com/adueppen/personal-website",
   "url": "https://ajd.sh",
   "themeColor": "#ffffff",
+  "coreFonts": [
+    "/styles/fonts/nunito-sans-v11-latin-regular.woff2",
+    "/styles/fonts/nunito-sans-v11-latin-700.woff2",
+    "/styles/fonts/nunito-v23-latin-700.woff2"
+  ],
   "links": {
     "discord": {
       "siteName": "Discord",

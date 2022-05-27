@@ -15,7 +15,7 @@ It's been a while, huh? The last time I made any real changes to this site was
 [exactly 2 years ago today](https://github.com/adueppen/personal-website/commit/543c4d6). A lot has changed since then,
 so I think it makes sense to go over that before I get into more details about this blog. 
 
-### What even were the last 2 years?
+## What even were the last 2 years?
 On April 3, 2020, things were pretty different, to say the least. After 4 months of working in my first office job, I
 was adjusting to the idea of remote work. At this point, it still seemed like a return to the office was only weeks
 away, so I hadn't exactly been getting too settled into my new work style. These days, however, I'm hardly even
@@ -45,7 +45,7 @@ paper or on a computer. The relative obscurity of these machines as well as thei
 has led me to acquire somewhat of a collection, and so they will certainly feature in future posts on this blog.
 Speaking of which...
 
-### What's with this whole blog thing?
+## What's with this whole blog thing?
 I had intended to start writing blog posts a while back, but the aforementioned work-life balance issues have led to
 nothing coming to fruition yet. With the number of things that have changed in the past 2 years though, there's really
 no better time to start on it than now! I have a lot of things floating around my head that I'm interested in writing
@@ -65,7 +65,7 @@ about, but the main areas of focus here are most likely going to be:
     riding the local bus system. There are a lot of ways that transit in my area could be improved, so I may write some
     posts about that.
 
-### Special thanks
+## Special thanks
 I couldn't have made it here without an absolutely insane number of people, so I want to give credit to some in
 particular who have helped to make this site exist:
 
