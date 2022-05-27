@@ -76,7 +76,6 @@ module.exports = function (eleventyConfig) {
         htmlFunction: (metadata, options, attributes) => {
           let newImgAttrs = {
             src: metadata.jpeg[0].url,
-            loading: "lazy",
             decoding: "async"
           };
           return `<picture>
