@@ -41,6 +41,7 @@ body {
   color: var(--fg);
   transition: all $transitionDuration;
   margin: 0;
+  overflow-x: hidden;
   font-family: "Nunito Sans", sans-serif;
 }
 

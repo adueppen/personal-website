@@ -17,7 +17,7 @@ h1 {
   left: 50%;
   right: 50%;
   width: 100vw;
-  max-height: 256px;
+  aspect-ratio: 3 / 1;
   position: relative;
   object-fit: cover;
 }
@@ -27,9 +27,9 @@ h1 {
   transition: filter $transitionDuration;
 }
 
-@media screen and (max-width: $contentWidth) {
+@media screen and (min-width: $contentWidth) {
   .headerImg {
-    aspect-ratio: 7 / 2;
+    max-height: 248px;
   }
 }
 
