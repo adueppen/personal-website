@@ -5,7 +5,8 @@
   "coreFonts": [
     "/styles/fonts/nunito-sans-v11-latin-regular.woff2",
     "/styles/fonts/nunito-sans-v11-latin-700.woff2",
-    "/styles/fonts/nunito-v23-latin-700.woff2"
+    "/styles/fonts/nunito-v23-latin-700.woff2",
+    "/styles/fonts/jetbrains-mono-v12-latin-regular.woff2"
   ],
   "links": {
     "discord": {

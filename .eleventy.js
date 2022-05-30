@@ -1,5 +1,6 @@
 const PWAPlugin = require("@piraces/eleventy-plugin-pwa");
 const navPlugin = require("@11ty/eleventy-navigation");
+const syntaxPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const linkPlugin = require("@aloskutov/eleventy-plugin-external-links");
 const metaPlugin = require("eleventy-plugin-metagen");
 const imgOptPlugin = require("eleventy-img-helper");
@@ -31,6 +32,7 @@ module.exports = function (eleventyConfig) {
     });
   }
   eleventyConfig.addPlugin(navPlugin);
+  eleventyConfig.addPlugin(syntaxPlugin);
   //TODO: this plugin lacks the option but consider adding a class to all external links with a symbol and possibly
   // color to indicate that they're external (something like what wikipedia has)
   eleventyConfig.addPlugin(linkPlugin, {

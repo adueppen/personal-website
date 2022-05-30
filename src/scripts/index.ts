@@ -21,32 +21,69 @@ if ("serviceWorker" in navigator) {
   wb.register().catch(err => console.log(`Something broke with the service worker: ${err}.`));
 }
 
+type Theme = "light" | "dark" | "black";
+type ThemeData = {
+  [key: Theme]: {
+    [key: string]: string;
+  }
+}
+
 //used for setting theme on both page load and theme selection
-export function setTheme(theme: string): void {
-  const themeData: { [key: string]: { [key: string]: string } } = {
-    "light": {
-      "bg": "#fafafa",
-      "fg": "#000",
-      "fgo": "#0002",
-      "dv": "#7d98a1",
-      "lc": "var(--middarkblue)",
-      "hbr": "100%"
+export function setTheme(theme: Theme): void {
+  const syntaxData: ThemeData = {
+    light: {
+      ctc: "#545454",
+      cbg: "#fefefe",
+      ccm: "#696969",
+      cpc: "#545454",
+      cpr: "#007299",
+      cvr: "#008000",
+      cst: "#aa5d00",
+      cfn: "#aa5d00",
+      ckw: "#d91e18",
+      cre: "#d91e18"
     },
-    "dark": {
-      "bg": "#282828",
-      "fg": "#fafafa",
-      "fgo": "#fff2",
-      "dv": "#d7dee2",
-      "lc": "var(--blue)",
-      "hbr": "75%"
+    dark: {
+      ctc: "#f8f8f2",
+      cbg: "#2b2b2b",
+      ccm: "#d4d0ab",
+      cpc: "#fefefe",
+      cpr: "#ffa07a",
+      cvr: "#00e0e0",
+      cst: "#abe338",
+      cfn: "#ffd700",
+      ckw: "#00e0e0",
+      cre: "#ffd700"
+    }
+  }
+
+  const themeData: ThemeData = {
+    light: {
+      bg: "#fafafa",
+      fg: "#000",
+      fgo: "#0002",
+      dv: "#7d98a1",
+      lc: "var(--middarkblue)",
+      hbr: "100%",
+      ...syntaxData.light
     },
-    "black": {
-      "bg": "#000",
-      "fg": "#fafafa",
-      "fgo": "#fff3",
-      "dv": "#d7dee2",
-      "lc": "var(--blue)",
-      "hbr": "65%"
+    dark: {
+      bg: "#222222",
+      fg: "#fafafa",
+      fgo: "#fff2",
+      dv: "#d7dee2",
+      lc: "var(--blue)",
+      hbr: "75%",
+      ...syntaxData.dark
+    },
+    black: {
+      bg: "#000",
+      fg: "#fafafa",
+      fgo: "#fff3",
+      dv: "#d7dee2",
+      lc: "var(--blue)",
+      hbr: "65%",
+      ...syntaxData.dark
     }
   };
 

@@ -69,7 +69,7 @@ about, but the main areas of focus here are most likely going to be:
 I couldn't have made it here without an absolutely insane number of people, so I want to give credit to some in
 particular who have helped to make this site exist:
 
-- [Burner](https://yaboiburner.github.io)
+- [Burner](https://burner.gay)
 - [Cendyne](https://cendyne.dev)
 - [Corbin Crutchley](https://crutchcorn.com)
 - [James Fenn](https://jfenn.me)
