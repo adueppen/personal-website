@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
+    "clean:dev": "rm -rf dist_dev",
     "eleventy:default": "npx eleventy",
     "eleventy:serve": "npx eleventy --serve --incremental",
     "eleventy:watch": "npx eleventy --watch --incremental",
-    "dev": "NODE_ENV=dev run-s clean eleventy:serve --print-label",
+    "dev": "NODE_ENV=dev run-s clean:dev eleventy:serve --print-label",
     "dev:noclean": "NODE_ENV=dev run-s eleventy:serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "build": "NODE_ENV=prod run-s clean eleventy:default --print-label"
@@ -24,36 +25,28 @@
     "url": "https://github.com/adueppen/personal-website/issues"
   },
   "homepage": "https://github.com/adueppen/personal-website#readme",
-  "alias": {
-    "assets": "./src/assets",
-    "includes": "./src/includes",
-    "data": "./src/data"
-  },
-  "browserslist": [
-    "defaults"
-  ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@aloskutov/eleventy-plugin-external-links": "^1.4.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@aloskutov/eleventy-plugin-external-links": "^1.4.1",
     "@csstools/postcss-sass": "^5.0.1",
     "@piraces/eleventy-plugin-pwa": "^1.1.2",
-    "autoprefixer": "^10.4.7",
-    "cssnano": "^5.1.10",
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.12",
     "eleventy-img-helper": "^0.2.0",
-    "eleventy-plugin-metagen": "^1.7.8",
-    "esbuild": "^0.14.42",
+    "eleventy-plugin-metagen": "^1.7.11",
+    "esbuild": "^0.14.54",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.4",
     "markdown-it-image-figures": "^2.1.0",
     "markdown-it-linkify-images": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.16",
     "postcss-scss": "^4.0.4",
-    "typescript": "^4.7.2",
-    "workbox-window": "^6.5.3"
+    "typescript": "^4.7.4",
+    "workbox-window": "^6.5.4"
   }
 }

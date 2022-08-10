@@ -41,6 +41,12 @@
       "displayText": "@adueppen@tilde.zone",
       "username": "adueppen@tilde.zone"
     },
+    "telegram": {
+      "siteName": "Telegram",
+      "url": "https://telegram.me/adueppen",
+      "displayText": "@adueppen",
+      "username": "adueppen"
+    },
     "twitter": {
       "siteName": "Twitter",
       "url": "https://twitter.com/AlexDueppen",

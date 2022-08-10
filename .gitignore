@@ -62,6 +62,7 @@ typings/
 
 # eleventy.js build output
 dist
+dist_dev
 
 # eleventy-fetch cache
 .cache/

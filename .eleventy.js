@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
     return date.toISOString().split("T")[0]
   });
 
-  const imgOptConfig = {
+  eleventyConfig.addPlugin(imgOptPlugin, {
     formats: ["avif", "webp", "jpeg"],
     hashLength: 4,
     filenameFormat: (id, src, width, format) => {
@@ -113,9 +113,7 @@ module.exports = function (eleventyConfig) {
       }
       return inputContent;
     }
-  };
-
-  eleventyConfig.addPlugin(imgOptPlugin, imgOptConfig);
+  });
 
   //SCSS -> CSS compilation, prefixing, and optimization
   eleventyConfig.addExtension("scss", {
@@ -161,7 +159,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    dir: {input: "src", output: "dist", data: "_data"},
+    dir: {input: "src", output: process.env.NODE_ENV === "prod" ? "dist" : "dist_dev", data: "_data"},
     passthroughFileCopy: true,
     templateFormats: ["njk", "md", "html", "scss", "ts"],
     htmlTemplateEngine: "njk",
