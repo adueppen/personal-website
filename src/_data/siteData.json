@@ -9,6 +9,12 @@
     "/styles/fonts/jetbrains-mono-v12-latin-regular.woff2"
   ],
   "links": {
+    "cohost": {
+      "siteName": "Cohost",
+      "url": "https://cohost.org/ajd",
+      "displayText": "@ajd",
+      "username": "ajd"
+    },
     "discord": {
       "siteName": "Discord",
       "url": "https://discordapp.com/users/321117879053451264",
@@ -40,6 +46,11 @@
       "url": "https://tilde.zone/@adueppen",
       "displayText": "@adueppen@tilde.zone",
       "username": "adueppen@tilde.zone"
+    },
+    "resume": {
+      "siteName": "Resume",
+      "url": "/resume.pdf",
+      "displayText": "PDF"
     },
     "telegram": {
       "siteName": "Telegram",

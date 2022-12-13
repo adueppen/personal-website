@@ -23,7 +23,7 @@ if ("serviceWorker" in navigator) {
 
 type Theme = "light" | "dark" | "black";
 type ThemeData = {
-  [key: Theme]: {
+  [key in Theme]?: {
     [key: string]: string;
   }
 }
@@ -54,6 +54,10 @@ export function setTheme(theme: Theme): void {
       cfn: "#ffd700",
       ckw: "#00e0e0",
       cre: "#ffd700"
+    },
+    black: {
+      ...this.dark,
+      cbg: "#1a1a1a"
     }
   }
 
@@ -83,7 +87,7 @@ export function setTheme(theme: Theme): void {
       dv: "#d7dee2",
       lc: "var(--blue)",
       hbr: "65%",
-      ...syntaxData.dark
+      ...syntaxData.black
     }
   };
 
@@ -93,7 +97,7 @@ export function setTheme(theme: Theme): void {
   }
 
   Object.entries(themeData[theme]).forEach(([property, value]) => {
-    document.documentElement.style.setProperty(`--${property}`, value as string);
+    document.documentElement.style.setProperty(`--${property}`, value);
   });
   document.querySelector("meta[name='theme-color']").setAttribute("content", themeData[theme].bg);
 
@@ -102,4 +106,4 @@ export function setTheme(theme: Theme): void {
 }
 
 (window as any).setTheme = setTheme;
-setTheme(localStorage.getItem("theme"));
+setTheme(localStorage.getItem("theme") as Theme);
