@@ -47,14 +47,15 @@ module.exports = function (eleventyConfig) {
     })
     //.use(require("markdown-it-linkify-images"), {target: "_blank"})
   );
+  // TODO: consider fetching https://tilde.zone/.well-known/webfinger?resource=acct:adueppen@tilde.zone and putting it
+  //  at the same path on my own site so I can use *@ajd.sh as a Mastodon alias
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({"src/misc": "/"});
   eleventyConfig.addPassthroughCopy("src/styles/fonts");
-  //currently passthrough copy with a glob makes live reload not work on that dir, so only do in prod
-  if (process.env.NODE_ENV === "prod") eleventyConfig.addPassthroughCopy("src/posts/*/*.{jpg,png,pdf}");
-  eleventyConfig.setBrowserSyncConfig({
+  eleventyConfig.addPassthroughCopy("src/posts/*/*.{jpg,png,pdf}");
+  eleventyConfig.setServerOptions({
     port: 4000,
-    delay: 100
+    showAllHosts: true
   });
 
   eleventyConfig.addFilter("toISODate", date => {
