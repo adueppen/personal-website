@@ -73,5 +73,8 @@ dist_dev
 #stuff that I'm not ready to make public yet
 testing/
 
+#stuff that shouldn't be public
+src/unlinked/
+
 # Local Netlify folder
 .netlify

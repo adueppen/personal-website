@@ -1,33 +1,33 @@
 @import 'styles/vars';
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --ctc: #f8f8f2;
-    --cbg: #2b2b2b;
-    --ccm: #d4d0ab;
-    --cpc: #fefefe;
-    --cpr: #ffa07a;
-    --cvr: #00e0e0;
-    --cst: #abe338;
-    --cfn: #ffd700;
-    --ckw: #00e0e0;
-    --cre: #ffd700;
-  }
+	:root {
+		--ctc: #f8f8f2;
+		--cbg: #2b2b2b;
+		--ccm: #d4d0ab;
+		--cpc: #fefefe;
+		--cpr: #ffa07a;
+		--cvr: #00e0e0;
+		--cst: #abe338;
+		--cfn: #ffd700;
+		--ckw: #00e0e0;
+		--cre: #ffd700;
+	}
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --ctc: #545454;
-    --cbg: #fefefe;
-    --ccm: #696969;
-    --cpc: #545454;
-    --cpr: #007299;
-    --cvr: #008000;
-    --cst: #aa5d00;
-    --cfn: #aa5d00;
-    --ckw: #d91e18;
-    --cre: #d91e18;
-  }
+	:root {
+		--ctc: #545454;
+		--cbg: #fefefe;
+		--ccm: #696969;
+		--cpc: #545454;
+		--cpr: #007299;
+		--cvr: #008000;
+		--cst: #aa5d00;
+		--cfn: #aa5d00;
+		--ckw: #d91e18;
+		--cre: #d91e18;
+	}
 }
 
 /**
@@ -35,56 +35,56 @@
  */
 
 code, pre {
-  color: var(--ctc);
-  background: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  transition: all $transitionDuration;
+	color: var(--ctc);
+	background: none;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 14px;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	transition: all $transitionDuration;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
 }
 
 /* Code blocks */
 pre {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
 }
 
 :not(pre) > code, pre {
-  background: var(--cbg);
+	background: var(--cbg);
 }
 
 /* Inline code */
 :not(pre) > code {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--ccm);
+	color: var(--ccm);
 }
 
 .token.punctuation {
-  color: var(--cpc);
+	color: var(--cpc);
 }
 
 .token.property,
@@ -92,12 +92,12 @@ pre {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: var(--cpr);
+	color: var(--cpr);
 }
 
 .token.boolean,
 .token.number {
-  color: var(--cvr);
+	color: var(--cvr);
 }
 
 .token.selector,
@@ -106,7 +106,7 @@ pre {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: var(--cst);
+	color: var(--cst);
 }
 
 .token.operator,
@@ -115,33 +115,33 @@ pre {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: var(--cvr);
+	color: var(--cvr);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function {
-  color: var(--cfn);
+	color: var(--cfn);
 }
 
 .token.keyword {
-  color: var(--cvr);
+	color: var(--cvr);
 }
 
 .token.regex,
 .token.important {
-  color: var(--cre);
+	color: var(--cre);
 }
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .token.italic {
-  font-style: italic;
+	font-style: italic;
 }
 
 .token.entity {
-  cursor: help;
+	cursor: help;
 }

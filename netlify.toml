@@ -1,13 +1,12 @@
 [build]
-  publish = "dist/"
-  command = "npm run build"
-  environment = { NODE_VERSION = "16" }
+	publish = "dist/"
+	command = "npm run build"
+	[build.environment]
+		NODE_VERSION = "20"
 
-  [build.processing]
-    skip_processing = false
-  [build.processing.images]
-    compress = true
+	[build.processing]
+		skip_processing = false
 
 [[edge_functions]]
-  path = "/"
-  function = "easteregg"
+	path = "/"
+	function = "easteregg"

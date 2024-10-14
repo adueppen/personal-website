@@ -10,7 +10,7 @@ eleventyComputed:
     key: "{{ project.name }}"
     parent: Projects
   title: "{{ project.name }}"
-extraStyles: 
+extraStyles:
 - /styles/code.css
 ---
 {{ project.readme | safe }}

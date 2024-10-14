@@ -3,215 +3,217 @@
 @import 'styles/fonts';
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --bg: #fafafa;
-    --fg: #000;
-    --fgo: #0002;
-    --dv: #7d98a1;
-    --lc: var(--middarkblue);
-    --hbr: 100%;
-  }
+	:root {
+		--bg: #fafafa;
+		--fg: #000;
+		--fgo: #0002;
+		--dv: #7d98a1;
+		--lc: var(--middarkblue);
+		--hbr: 100%;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #222222;
-    --fg: #fafafa;
-    --fgo: #fff2;
-    --dv: #d7dee2;
-    --lc: var(--blue);
-    --hbr: 75%
-  }
+	:root {
+		--bg: #222222;
+		--fg: #fafafa;
+		--fgo: #fff2;
+		--dv: #d7dee2;
+		--lc: var(--blue);
+		--hbr: 75%
+	}
 }
 
 :root {
-  //primary colors, thanks https://github.com/vukkashin!
-  --darkblue: #002890;
-  --middarkblue: #1d61c0; //average of blue and darkblue
-  --blue: #3a99f0;
-  --green: #0cc355;
-  --gray: #d7dee2;
+	//primary colors, thanks https://github.com/vukkashin!
+	--darkblue: #002890;
+	--middarkblue: #1d61c0; //average of blue and darkblue
+	--blue: #3a99f0;
+	--green: #0cc355;
+	--gray: #d7dee2;
 
-  scrollbar-color: var(--fgo) var(--bg); //this is only a thing in firefox at the moment but it looks nice
-  transition: scrollbar-color $transitionDuration;
+	scrollbar-color: var(--fgo) var(--bg); //this is only a thing in firefox at the moment but it looks nice
+	transition: scrollbar-color $transitionDuration;
+	scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--fg);
-  transition: all $transitionDuration;
-  margin: 0;
-  overflow-x: hidden;
-  font-family: "Nunito Sans", sans-serif;
+	background-color: var(--bg);
+	color: var(--fg);
+	transition: all $transitionDuration;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: "Nunito Sans", sans-serif;
 }
 
 .preload, .preload :not(.alwaysAnimate) { //avoid potential flash of wrong color, but allow nav hover effect without JS
-  transition: none !important;
+	transition: none !important;
 }
 
 h1, h2 {
-  font-family: "Nunito", sans-serif;
+	font-family: "Nunito", sans-serif;
 }
 
 header {
-  display: inline-flex;
-  justify-content: center;
-  box-shadow: inset 0 (-$dividerHeight) var(--dv);
-  width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	box-shadow: inset 0 (-$dividerHeight) var(--dv);
+	width: 100%;
 }
 
 footer {
-  display: inline-flex;
-  justify-content: center;
-  box-shadow: inset 0 $dividerHeight var(--dv);
-  width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	box-shadow: inset 0 $dividerHeight var(--dv);
+	width: 100%;
 }
 
 @media screen and (max-width: 480px) {
-  header {
-    display: block;
-    padding: 0;
-  }
+	header {
+		display: block;
+		padding: 0;
+	}
 
-  nav ul {
-    width: 100%;
-    justify-content: space-evenly;
-  }
+	nav ul {
+		width: 100%;
+		justify-content: space-evenly;
+	}
 
-  ul .navItem {
-    width: 25%;
-  }
+	ul .navItem {
+		width: 25%;
+	}
 
-  header {
-    box-shadow: none; //hide border when covered by nav items, this helps avoid 1px of it showing on HiDPI displays
-  }
+	header {
+		box-shadow: none; //hide border when covered by nav items, this helps avoid 1px of it showing on HiDPI displays
+	}
 }
 
 @media screen and (max-width: 400px) {
-  .themeSelect > * {
-    display: block;
-    height: auto;
-  }
+	.themeSelect > * {
+		display: block;
+		height: auto;
+	}
 }
 
 @media screen and (min-width: $contentWidth) {
-  main :is(p, ul, figure) {
-    margin-left: $contentMargin;
-  }
+	main :is(p, ul, figure) {
+		padding-left: $contentMargin;
+		list-style-position: inside;
+	}
 }
 
 main {
-  padding: $standardPadding;
-  margin: $contentMargin auto;
-  max-width: $contentWidth;
-  text-align: justify;
-  box-sizing: content-box;
+	padding: $standardPadding;
+	margin: $contentMargin auto;
+	max-width: $contentWidth;
+	text-align: justify;
+	box-sizing: content-box;
 }
 
 @include headers {
-  text-align: start;
+	text-align: start;
 }
 
 .footerContent {
-  display: inherit;
-  margin-top: 1em;
-  width: $contentWidth;
-  padding: $standardPadding calc(1em - #{$dividerHeight}); //bottom padding in case of scrolling
+	display: inherit;
+	margin-top: 1em;
+	width: $contentWidth;
+	padding: $standardPadding calc(1em - #{$dividerHeight}); //bottom padding in case of scrolling
 }
 
 nav ul {
-  display: inline-flex;
-  padding: 0;
-  margin: 0;
-  line-height: 56px;
+	display: inline-flex;
+	padding: 0;
+	margin: 0;
+	line-height: 56px;
 }
 
 .navItem {
-  list-style: none;
-  width: 120px;
-  text-align: center;
-  border-bottom: $dividerHeight solid;
+	list-style: none;
+	width: 120px;
+	text-align: center;
+	border-bottom: $dividerHeight solid;
 }
 
 .navItemActive {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .navItem:nth-of-type(1) {
-  border-bottom-color: var(--darkblue);
+	border-bottom-color: var(--darkblue);
 }
 
 .navItem:nth-of-type(2) {
-  border-bottom-color: var(--middarkblue);
+	border-bottom-color: var(--middarkblue);
 }
 
 .navItem:nth-of-type(3) {
-  border-bottom-color: var(--blue);
+	border-bottom-color: var(--blue);
 }
 
 .navItem:nth-of-type(4) {
-  border-bottom-color: var(--green);
+	border-bottom-color: var(--green);
 }
 
 .navItem a {
-  text-decoration: none;
-  display: block;
-  transition: all $transitionDuration;
+	text-decoration: none;
+	display: block;
+	transition: all $transitionDuration;
 }
 
 .navItem a:hover {
-  background-color: var(--fgo);
+	background-color: var(--fgo);
 }
 
 .source {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .navItem :is(a, a:visited) {
-  color: var(--fg);
+	color: var(--fg);
 }
 
 a, a:visited {
-  color: var(--lc);
+	color: var(--lc);
 }
 
 #newContent {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: var(--fg);
-  color: var(--bg);
-  text-align: center;
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--fg);
+	color: var(--bg);
+	text-align: center;
 }
 
 #newContent p {
-  padding: $standardPadding;
+	padding: $standardPadding;
 }
 
 ul {
-  padding-left: 20px;
+	padding-left: $contentMargin;
 }
 
 .requiresJS {
-  display: none;
+	display: none;
 }
 
 input[type=radio] {
-  appearance: none;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  margin: 4px;
-  border: 2px solid var(--fg);
-  border-radius: 100%;
-  height: 16px;
-  width: 16px;
-  transition: border .15s;
+	appearance: none;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin: 4px;
+	border: 2px solid var(--fg);
+	border-radius: 100%;
+	height: 16px;
+	width: 16px;
+	transition: border .15s;
 }
 
 input[type=radio]:checked {
-  border: 5px solid var(--fg);
+	border: 5px solid var(--fg);
 }

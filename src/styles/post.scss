@@ -1,55 +1,57 @@
 @import 'styles/vars';
+//TODO: consider putting my SCSS compilation stuff in a filter (see https://www.11ty.dev/docs/quicktips/inline-css/) so
+// I can inline this stylesheet in posts
 
 .postTitle {
-  text-align: start;
+	text-align: start;
 }
 
 .postTitle :is(h1, i) {
-  display: inline;
+	display: inline;
 }
 
 h1 {
-  font-size: 2em;
+	font-size: 2em;
 }
 
 .headerImg {
-  margin: -$contentMargin -50vw 1em;
-  left: 50%;
-  right: 50%;
-  width: 100vw;
-  aspect-ratio: 3 / 1;
-  position: relative;
-  object-fit: cover;
+	margin: -$contentMargin -50vw 1em;
+	left: 50%;
+	right: 50%;
+	width: 100vw;
+	aspect-ratio: 3 / 1;
+	position: relative;
+	object-fit: cover;
 }
 
 .themeFilter {
-  filter: brightness(var(--hbr));
-  transition: filter $transitionDuration;
+	filter: brightness(var(--hbr));
+	transition: filter $transitionDuration;
 }
 
 @media screen and (min-width: $contentWidth) {
-  .headerImg {
-    max-height: 248px;
-  }
+	.headerImg {
+		max-height: 248px;
+	}
 }
 
 article img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
 }
 
 article img[width][height] {
-  height: auto;
+	height: auto;
 }
 
 figure { //TODO idea: make the entire <figure> a slightly different color that stretches all the way to the edges of the screen to make it clear what it is
-  margin: 0;
+	margin: 0;
 }
 
 figcaption {
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  font-style: italic;
-  text-align: center;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	font-style: italic;
+	text-align: center;
 }

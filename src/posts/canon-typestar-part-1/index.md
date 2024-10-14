@@ -27,11 +27,11 @@ eleventyNavigation:
 Typewriters are one of my more recently acquired hobbies; they first piqued my interest when I inherited my
 grandfather's Silver-Reed EX-42 "Penman" electronic typewriter in early 2021. I found that I had a much easier time
 getting my thoughts out onto paper when using it, and so this quickly turned into me acquiring a small collection of
-mostly electronic typewriters. Until recently, all of my typewriters were impact-based ones 
-([daisy wheel](https://en.wikipedia.org/wiki/Daisy_wheel_printing) electronics as well as a 
+mostly electronic typewriters. Until recently, all of my typewriters were impact-based ones
+([daisy wheel](https://en.wikipedia.org/wiki/Daisy_wheel_printing) electronics as well as a
 [typebar electric](https://www.youtube.com/watch?v=IouRmZ_JlpE)). There's certainly something to be said about their
 tactile nature, but none of them are particularly quiet or small. I'm going to be heading off to university in the fall,
-and so I wanted to get a typewriter I could feasibly take with me and use without my roommates wanting to kill me. 
+and so I wanted to get a typewriter I could feasibly take with me and use without my roommates wanting to kill me.
 
 Canon typewriters are something I had been eyeing up for a while, since they seem to be of decent quality, look nice,
 and the ribbons aren't usually too hard to find. At this point I had also recently discovered thermal typewriters, which
@@ -64,7 +64,7 @@ I had "Canon Typestar" as a saved search on eBay and Goodwill for a few months, 
 flawed in some way: wildly overpriced, non-functional, local pickup only, and in one case all 3! At long last, I found a
 Goodwill listing for one in mid-March that looked quite appealing. It was in good condition, came with the AC adapter, a
 cartridge, and even some thermal paper, and to top it all off it came in this fancy Samsonite briefcase with a custom
-foam insert to hold everything in place. 
+foam insert to hold everything in place.
 
 ![A photo of my Typestar 7 and some of its accessories in its carrying case.](case.jpg "The goods.")
 
@@ -109,7 +109,7 @@ the features, and I especially enjoy the mascot appearing on a few pages.
 
 ![A photo of the ribbon used by most Canon Typestar typewriters.](ribbon.jpg "One of the elusive IR-50 ribbons.")
 
-For whatever reason, the thermal transfer ribbons used by many of these typewriters are nearly impossible to find, 
+For whatever reason, the thermal transfer ribbons used by many of these typewriters are nearly impossible to find,
 especially compared to their daisy-wheel counterparts. Mine came with a partial ribbon, but it doesn't have much life
 left. I got an IBM Quietwriter (IBM's line of thermal typewriters and printers) high-yield ribbon off eBay to see if
 that might offer a cheaper solution, since they're readily available. Unfortunately, it resulted in absolutely nothing

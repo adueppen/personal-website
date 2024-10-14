@@ -1,73 +1,73 @@
 {
-  "repoLink": "https://github.com/adueppen/personal-website",
-  "url": "https://ajd.sh",
-  "themeColor": "#ffffff",
-  "coreFonts": [
-    "/styles/fonts/nunito-sans-v11-latin-regular.woff2",
-    "/styles/fonts/nunito-sans-v11-latin-700.woff2",
-    "/styles/fonts/nunito-v23-latin-700.woff2",
-    "/styles/fonts/jetbrains-mono-v12-latin-regular.woff2"
-  ],
-  "links": {
-    "cohost": {
-      "siteName": "Cohost",
-      "url": "https://cohost.org/ajd",
-      "displayText": "@ajd",
-      "username": "ajd"
-    },
-    "discord": {
-      "siteName": "Discord",
-      "url": "https://discordapp.com/users/321117879053451264",
-      "displayText": "adueppen#7189"
-    },
-    "email": {
-      "siteName": "Email",
-      "url": "mailto:contact@ajd.sh",
-      "displayText": "contact@ajd.sh"
-    },
-    "github": {
-      "siteName": "GitHub",
-      "url": "https://github.com/adueppen",
-      "displayText": "@adueppen",
-      "username": "adueppen"
-    },
-    "keybase": {
-      "siteName": "Keybase",
-      "url": "https://keybase.io/adueppen",
-      "displayText": "adueppen"
-    },
-    "linkedin": {
-      "siteName": "LinkedIn",
-      "url": "https://www.linkedin.com/in/alex-dueppen/",
-      "displayText": "/in/alex-dueppen/"
-    },
-    "mastodon": {
-      "siteName": "Mastodon",
-      "url": "https://tilde.zone/@adueppen",
-      "displayText": "@adueppen@tilde.zone",
-      "username": "adueppen@tilde.zone"
-    },
-    "resume": {
-      "siteName": "Resume",
-      "url": "/resume.pdf",
-      "displayText": "PDF"
-    },
-    "telegram": {
-      "siteName": "Telegram",
-      "url": "https://telegram.me/adueppen",
-      "displayText": "@adueppen",
-      "username": "adueppen"
-    },
-    "twitter": {
-      "siteName": "Twitter",
-      "url": "https://twitter.com/AlexDueppen",
-      "displayText": "@AlexDueppen",
-      "username": "AlexDueppen"
-    },
-    "uu": {
-      "siteName": "Unicorn Utterances",
-      "url": "https://unicorn-utterances.com/unicorns/adueppen",
-      "displayText": "adueppen"
-    }
-  }
+	"repoLink": "https://github.com/adueppen/personal-website",
+	"url": "https://ajd.sh",
+	"themeColor": "#ffffff",
+	"coreFonts": [
+		"/styles/fonts/nunito-sans-v11-latin-regular.woff2",
+		"/styles/fonts/nunito-sans-v11-latin-700.woff2",
+		"/styles/fonts/nunito-v23-latin-700.woff2",
+		"/styles/fonts/jetbrains-mono-v12-latin-regular.woff2"
+	],
+	"links": {
+		"bsky": {
+			"siteName": "Bluesky",
+			"url": "https://bsky.app/profile/ajd.sh",
+			"displayText": "@ajd.sh",
+			"username": "ajd.sh"
+		},
+		"discord": {
+			"siteName": "Discord",
+			"url": "https://discordapp.com/users/321117879053451264",
+			"displayText": "adueppen"
+		},
+		"email": {
+			"siteName": "Email",
+			"url": "mailto:contact@ajd.sh",
+			"displayText": "contact@ajd.sh"
+		},
+		"github": {
+			"siteName": "GitHub",
+			"url": "https://github.com/adueppen",
+			"displayText": "@adueppen",
+			"username": "adueppen"
+		},
+		"keybase": {
+			"siteName": "Keybase",
+			"url": "https://keybase.io/adueppen",
+			"displayText": "adueppen"
+		},
+		"linkedin": {
+			"siteName": "LinkedIn",
+			"url": "https://www.linkedin.com/in/alex-dueppen/",
+			"displayText": "/in/alex-dueppen/"
+		},
+		"mastodon": {
+			"siteName": "Mastodon",
+			"url": "https://tilde.zone/@adueppen",
+			"displayText": "@adueppen@tilde.zone",
+			"username": "adueppen@tilde.zone"
+		},
+		"resume": {
+			"siteName": "Resume",
+			"url": "/resume.pdf",
+			"displayText": "PDF"
+		},
+		"telegram": {
+			"siteName": "Telegram",
+			"url": "https://telegram.me/adueppen",
+			"displayText": "@adueppen",
+			"username": "adueppen"
+		},
+		"twitter": {
+			"siteName": "Twitter",
+			"url": "https://twitter.com/AlexDueppen",
+			"displayText": "@AlexDueppen",
+			"username": "AlexDueppen"
+		},
+		"uu": {
+			"siteName": "Unicorn Utterances",
+			"url": "https://unicorn-utterances.com/unicorns/adueppen",
+			"displayText": "adueppen"
+		}
+	}
 }

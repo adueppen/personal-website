@@ -2,13 +2,15 @@
 layout: layouts/base.njk
 ---
 {%- if header %}
-  <a href="{{ header.url }}" target="_blank">
-    <img src="{{ header.url }}" alt="{{ header.alt }}" class="headerImg{% if header.filter %} themeFilter{% endif %}">
-  </a>
+	<a href="{{ header.url }}" target="_blank">
+		<img src="{{ header.url }}" alt="{{ header.alt }}" class="headerImg{% if header.filter %} themeFilter{% endif %}">
+	</a>
 {%- endif %}
 <article>
-  <div class="postTitle">
-    <h1>{{ title }}</h1><i> -&nbsp;{{ date | toISODate }}</i>
-  </div>
-  {{ content | safe }}
+	{%- if title and date %}
+	<div class="postTitle">
+		<h1>{{ title }}</h1><i> -&nbsp;{{ date | toISODate }}</i>
+	</div>
+	{%- endif %}
+	{{ content | safe }}
 </article>

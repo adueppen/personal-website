@@ -6,6 +6,7 @@ eleventyNavigation:
   key: Posts
   order: 3
 ---
+
 # Recent Posts
 
 {% for post in collections.posts | reverse -%}
