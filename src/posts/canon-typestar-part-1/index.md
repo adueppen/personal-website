@@ -24,6 +24,9 @@ eleventyNavigation:
   parent: Posts
 ---
 
+Table of contents:
+[[toc]]
+
 Typewriters are one of my more recently acquired hobbies; they first piqued my interest when I inherited my
 grandfather's Silver-Reed EX-42 "Penman" electronic typewriter in early 2021. I found that I had a much easier time
 getting my thoughts out onto paper when using it, and so this quickly turned into me acquiring a small collection of

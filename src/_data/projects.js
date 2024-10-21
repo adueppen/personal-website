@@ -1,11 +1,11 @@
-const eleventyFetch = require("@11ty/eleventy-fetch");
+import eleventyFetch from "@11ty/eleventy-fetch";
 
 const textOptions = {
 	duration: "1d",
 	type: "text"
 }
 
-module.exports = async () => [
+export default async () => [
 	{
 		name: "eleventy-img-helper",
 		blurb: "An Eleventy plugin I created to convert image tags in generated HTML to responsive image markup based on " +
@@ -16,4 +16,4 @@ module.exports = async () => [
 			"NPM": "https://npmjs.com/package/eleventy-img-helper"
 		}
 	}
-];
+]

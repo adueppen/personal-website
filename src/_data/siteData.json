@@ -47,6 +47,11 @@
 			"displayText": "@adueppen@tilde.zone",
 			"username": "adueppen@tilde.zone"
 		},
+		"pp": {
+			"siteName": "Playful Programming",
+			"url": "https://playfulprogramming.com/people/adueppen",
+			"displayText": "adueppen"
+		},
 		"resume": {
 			"siteName": "Resume",
 			"url": "/resume.pdf",
@@ -63,11 +68,6 @@
 			"url": "https://twitter.com/AlexDueppen",
 			"displayText": "@AlexDueppen",
 			"username": "AlexDueppen"
-		},
-		"uu": {
-			"siteName": "Unicorn Utterances",
-			"url": "https://unicorn-utterances.com/unicorns/adueppen",
-			"displayText": "adueppen"
 		}
 	}
 }
